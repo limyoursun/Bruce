@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruce</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
+
+<body>
+  <header class="flex_wrap f_sb">
+  <ul class="gnb flex_wrap">
+    <li class="on">
+      <a href="#" class="depth1">문자 보내기</a>
+    </li>
+    <li>
+      <a href="#" class="depth1">전송 내역</a>
+      <ul class="depth2">
+        <li>
+          <a href="#">문자 전송 내역</a>
+        </li>
+        <li>
+          <a href="#">문자 예약 내역</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="depth1">그룹</a>
+    </li>
+    <li>
+      <a href="#" class="depth1">충전소</a>
+      <ul class="depth2">
+        <li>
+          <a href="#">충전하기</a>
+        </li>
+        <li>
+          <a href="#">충전 내역</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="utill flex_wrap">
+    <div class="user">
+      <p><b>홍길동</b>님</p>
+      <p>보유 크레딧 : <span>1,000</span></p>
+    </div>
+    <button type="button" class="btn_open">menu</button>
+  </div>
+
+  <div class="slide_wrap">
+    <div class="flex_wrap f_sb">
+      <button type="button" class="btn_close">close</button>
+      <div>
+        <p>아이디 : <span>test111</span></p>
+        <p>크레딧 : <span>10,000</span></p>
+      </div>
+    </div>
+    <ul class="slide_menu">
+      <li><a href="#">내 정보</a></li>
+      <li><a href="#">고객센터</a></li>
+      <li><a href="#">공지사항</a></li>
+      <li><a href="#">로그아웃</a></li>
+    </ul>
+  </div>
+</header>
+<script>
+$('.btn_open').on('click', function(){
+  $('.slide_wrap').addClass('on');
+})
+$('.btn_close').on('click', function(){
+  $('.slide_wrap').removeClass('on');
+})
+</script>
+  <!-- Contents -->
+  <div class="wrap">
+    <section class="box">
+      <div>
+        <span style="display:inline-block;width:5%;text-align:center;">수신자</span>
+        <textarea name="" style="width:92%;height:200px;"></textarea>
+      </div>
+      <div class="alignR">
+        <button type="button" class="btn_s btn_gray">PC파일 불러오기</button>
+        <button type="button" class="btn_s btn_gray">그룹 불러오기</button>
+      </div>
+    </section>
+    <section class="box">
+      <div>
+        <span style="display:inline-block;width:5%;text-align:center;">내용</span>
+        <textarea name="" style="width:92%;height:200px;"></textarea>
+      </div>
+      <div class="alignR">
+        <button type="button" class="btn_s btn_grayline">3사 테스트</button>
+        <button type="button" class="btn_s btn_gray">예약</button>
+        <button type="button" class="btn_s btn_gray">전송</button>
+      </div>
+    </section>
+  </div>
+
+  </div>
+  <!-- // Contents -->
+</body>
+
+</html>
