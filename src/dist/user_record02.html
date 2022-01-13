@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruce</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <script src="../js/file_attach.js"></script>
+
+
+
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css">
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
+  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+
+<script src="../plugins/jquery/dist/jquery.min.js"></script>
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+<script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+<script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
+<script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+<script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+<script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+<script src="../plugins/echarts/dist/echarts.min.js"></script>
+<script src="../js/ui_common.js"></script>
+</head>
+
+<body>
+  <!-- Contents -->
+  <div class="wrapper">
+    <div class="contents">
+      <div class="tit">
+        <div class="locate">
+          <ul>
+            <li><a href="user_record01.html">전송내역</a></li>
+            <li>문자 예약 내역</li>
+          </ul>
+        </div>
+        <h2 class="tit_h2">전송내역</h2>
+        <ul class="menu">
+          <li><a href="user_record01.html">문자 전송 내역</a></li>
+          <li class="on"><a href="user_record02.html">문자 예약 내역</a></li>
+        </ul>
+      </div>
+      <div class="wrap">
+        <section>
+          <div class="table_wrap">
+            <div class="tbl_tit">
+              <h3 class="tit_h3">예약 내역 목록</h3>
+            </div>
+            <div class="tbl_wrap">
+              <table id="jqGrid" class="jq-grid"></table>
+              <div id="jqGridPager"></div>
+            </div>
+          </div>
+        </section>
+        <div class="ico_arrow horizontal"></div>
+        <section>
+          <div class="table_wrap">
+            <div class="tbl_tit">
+              <h3 class="tit_h3">예약 전송 목록</h3>
+            </div>
+            <div class="tbl_wrap">
+              <table id="jqGrid2" class="jq-grid"></table>
+              <div id="jqGrid2Pager"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="slide_wrap">
+  <div class="slide">
+    <div class="flex_wrap f_sb util_user">
+      <p><b>홍길동</b>님</p>
+      <p><i class="axi axi-money"></i><span>1,000</span></p>
+    </div>
+    <ul id="gnb">
+      <li>
+        <a href="user_send.html" class="depth1 empty">문자 보내기</a>
+      </li>
+      <li>
+        <a href="user_record01.html" class="depth1 on active">전송 내역</a>
+        <ul class="depth2">
+          <li><a href="user_record01.html" class="on">문자 전송 내역</a></li>
+          <li><a href="user_record02.html">문자 예약 내역</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="user_group.html" class="depth1 empty">그룹</a>
+      </li>
+      <li>
+        <a href="#" class="depth1 new">충전소</a>
+        <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
+        <ul class="depth2">
+          <li><a href="#">충전하기</a></li>
+          <li><a href="#">충전 내역</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="depth1 empty">내 정보</a>
+      </li>
+      <li>
+        <a href="#" class="depth1 empty">게시판</a>
+      </li>
+      <li>
+        <a href="#" class="depth1 empty">공지사항</a>
+      </li>
+    </ul>
+  </div>
+  <button type="button" class="btn_open"></button>
+</div>
+
+<script> // slide menu button
+  $('.btn_open').on('click', function () {
+    $('.slide_wrap').toggleClass('on');
+  })
+</script>
+  </div>
+  <!-- // Contents -->
+</body>
+
+<script>
+  var mydata = [
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+  ];
+  $("#jqGrid").jqGrid({
+    data: mydata,
+    datatype: "local",
+    colModel: [
+      { label: '전송시간', name: 't1', align: 'center' },
+      { label: '수신자 수', name: 't2', align: 'center' },
+      { label: '수신자 지정', name: 't3', align: 'center' },
+      { label: '사용크레딧', name: 't4', align: 'center' },
+      { label: '발송여부', name: 't5', align: 'center', width: 100 },
+      { label: '성공', name: 't6', align: 'center' },
+      { label: '실패', name: 't7', align: 'center' },
+      { label: '내용 보기', name: 't8', align: 'center', width: 100 },
+      { label: '수신자 보기', name: 't9', align: 'center', width: 100 }
+    ],
+    //rownumbers:true,
+    loadonce: true,
+    viewrecords: true,
+    scrollOffset: true,
+    gridview: true,
+    pager: "#jqGridPager",
+    autowidth: true,
+    shrinkToFit: false
+  });
+  // 창 크기 변경 시, 너비 자동 조절
+  $(window).on('resize.jqGrid', function () {
+    jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
+  });
+</script>
+
+
+<script>
+  var mydata = [
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+  ];
+  $("#jqGrid2").jqGrid({
+    data: mydata,
+    datatype: "local",
+    colModel: [
+      { label: '전송시간', name: 't1', align: 'center' },
+      { label: '수신자 수', name: 't2', align: 'center' },
+      { label: '수신자 지정', name: 't3', align: 'center' },
+      { label: '사용크레딧', name: 't4', align: 'center' },
+      { label: '발송여부', name: 't5', align: 'center', width: 100 },
+      { label: '성공', name: 't6', align: 'center' },
+      { label: '실패', name: 't7', align: 'center' },
+      { label: '내용 보기', name: 't8', align: 'center', width: 100 },
+      { label: '수신자 보기', name: 't9', align: 'center', width: 100 }
+    ],
+    //rownumbers:true,
+    loadonce: true,
+    viewrecords: true,
+    scrollOffset: true,
+    gridview: true,
+    pager: "#jqGrid2Pager",
+    autowidth: true,
+    shrinkToFit: false
+  });
+
+  // 창 크기 변경 시, 너비 자동 조절
+  $(window).on('resize.jqGrid', function () {
+    jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
+  });
+</script>
+
+</html>

@@ -1,5 +1,62 @@
-$(function () {
-  /*calendar*/
+  $(function () {
+  // 화면 크기에 따른 slide menu hide/show
+  function slideWidth() {
+    $(window).on('load', function () {
+      if ($(window).width() <= 769) {
+        $('.slide_wrap').addClass('on');
+      }
+    })
+    $(window).on('resize',function () {
+      if ($(window).width() <= 769) {
+        $('.slide_wrap').addClass('on');
+      }
+    })
+  } slideWidth();
+
+  // gnb
+  function gnb() {
+    var lm = $("#gnb");
+    lm.a = lm.find(">li>a");
+    lm.dep2 = lm.find(">li>ul");
+    lm.dep2.a = lm.dep2.find(">li>a");
+    lm.dep2.hide();
+    lm.a.each(function () {
+      if (!$(this).next().length) {
+        $(this).addClass("empty");
+      }
+      if ($(this).hasClass("on")) {
+        $(this).next("ul").show();
+      }
+    });
+    lm.a.on("click", function () {
+      lm.a.removeClass("on");
+      if ($(this).next("ul").is(":hidden")) {
+        lm.dep2.slideUp("fast");
+        $(this).next("ul").slideDown("fast");
+      } else {
+        $(this).removeClass("on");
+        $(this).next("ul").slideUp("fast");
+      }
+      // 클릭 후 슬라이드
+      var url = $(this).attr("href");
+      if ($(this).next("ul").is("ul")) {
+        $(this).addClass('on');
+        $(this).next("ul").slideDown("fast", function () {
+          document.location.href = url;
+        });
+      } else if ($(this).next("ul").not("ul")) {
+        lm.dep2.slideUp('fast');
+        $(this).addClass("on");
+        setTimeout(function () {
+          document.location.href = url;
+        }, 200);
+      }
+      return false;
+    });
+  }
+  gnb();
+
+  // calendar
   $.datepicker.setDefaults({
     buttonImageOnly: true,
     showOn: "both",
@@ -43,27 +100,33 @@ $(function () {
     $(this).toggleClass('on');
     $(this).parent('p').nextAll('ul').slideToggle('fast');
   })
-})
 
 
-// Menu.
-var $menu = $('#menu'),
-  $menu_openers = $menu.children('ul').find('.opener');
-
-// Openers.
-$menu_openers.each(function () {
-  var $this = $(this);
-  $this.on('click', function (event) {
-    // Prevent default.
-    event.preventDefault();
-    // Toggle.
-    $menu_openers.not($this).removeClass('active');
-    $this.toggleClass('active');
-    // Trigger resize (sidebar lock).
-    $window.triggerHandler('resize.sidebar-lock');
+  // datetimepicker
+  $.datetimepicker.setLocale('kr');
+  $('#datetimepicker').datetimepicker({
+    minDate: 0
   });
 
-});
+  $('#date_timepicker_start').datetimepicker({
+    useCurrent: true,
+    format: 'Y/m/d',
+    onShow: function (ct) {
+      this.setOptions({
+        maxDate: $('#date_timepicker_end').val() ? $('#date_timepicker_end').val() : false
+      })
+    },
+    timepicker: false
+  });
 
+  $('#date_timepicker_end').datetimepicker({
+    format: 'Y/m/d',
+    onShow: function (ct) {
+      this.setOptions({
+        minDate: $('#date_timepicker_start').val() ? $('#date_timepicker_start').val() : false
+      })
+    },
+    timepicker: false
+  });
 
-   
+})
