@@ -57,13 +57,13 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="user_record01.html">전송내역</a></li>
+            <li><a href="user_record01_1.html">전송내역</a></li>
             <li>문자 예약 내역</li>
           </ul>
         </div>
-        <h2 class="tit_h2">전송내역</h2>
+        <h2 class="tit_h2">문자 예약 내역</h2>
         <ul class="menu">
-          <li><a href="user_record01.html">문자 전송 내역</a></li>
+          <li><a href="user_record01_1.html">문자 전송 내역</a></li>
           <li class="on"><a href="user_record02.html">문자 예약 내역</a></li>
         </ul>
       </div>
@@ -104,9 +104,9 @@
         <a href="user_send.html" class="depth1 empty">문자 보내기</a>
       </li>
       <li>
-        <a href="user_record01.html" class="depth1 on active">전송 내역</a>
+        <a href="user_record01_1.html" class="depth1 on active">전송 내역</a>
         <ul class="depth2">
-          <li><a href="user_record01.html" class="on">문자 전송 내역</a></li>
+          <li><a href="user_record01_1.html" class="on">문자 전송 내역</a></li>
           <li><a href="user_record02.html">문자 예약 내역</a></li>
         </ul>
       </li>
@@ -118,7 +118,7 @@
         <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
         <ul class="depth2">
           <li><a href="#">충전하기</a></li>
-          <li><a href="#">충전 내역</a></li>
+          <li><a href="user_add02.html">충전 내역</a></li>
         </ul>
       </li>
       <li>
@@ -133,6 +133,7 @@
     </ul>
   </div>
   <button type="button" class="btn_open"></button>
+  <button type="button" class="btn_change">Admin 전환</button>
 </div>
 
 <script> // slide menu button
@@ -163,8 +164,8 @@
       { label: '발송여부', name: 't5', align: 'center', width: 100 },
       { label: '성공', name: 't6', align: 'center' },
       { label: '실패', name: 't7', align: 'center' },
-      { label: '내용 보기', name: 't8', align: 'center', width: 100 },
-      { label: '수신자 보기', name: 't9', align: 'center', width: 100 }
+      { label: '내용 보기', name: 't8', align: 'center', width: 100, formatter: detail },
+      { label: '수신자 보기', name: 't9', align: 'center', width: 100, formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
@@ -179,6 +180,19 @@
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
+
+   function detail(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "보기":
+        txt = "dtl";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    return html;
+  }
 </script>
 
 
@@ -201,8 +215,8 @@
       { label: '발송여부', name: 't5', align: 'center', width: 100 },
       { label: '성공', name: 't6', align: 'center' },
       { label: '실패', name: 't7', align: 'center' },
-      { label: '내용 보기', name: 't8', align: 'center', width: 100 },
-      { label: '수신자 보기', name: 't9', align: 'center', width: 100 }
+      { label: '내용 보기', name: 't8', align: 'center', width: 100, formatter: detail},
+      { label: '수신자 보기', name: 't9', align: 'center', width: 100, formatter: detail}
     ],
     //rownumbers:true,
     loadonce: true,
@@ -218,6 +232,19 @@
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
+
+  function detail(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "보기":
+        txt = "dtl";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    return html;
+  }
 </script>
 
 </html>

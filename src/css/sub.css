@@ -22,10 +22,16 @@ section{margin-top:30px;}
 .box{padding:20px;background-color:#f2f2f2;}
 .ico_arrow.horizontal{position:relative;left:50%;cursor:pointer;width:36px;height:36px;margin:40px 0 20px;background: url(../images/ico_arrow.png);align-self:center;transform:rotate(90deg);}
 .ico_arrow.horizontal:hover{background-position-y:100%;}
+.axi{margin:3px 10px 0 0;font-size:0!important;}
+.axi::before{font-size:14px;font-family:'axicon';}
+.axi.btn_dtl::before{content:"\f00e";font-weight:normal;}
+.btn_dtl{margin:0;padding:5px;border:1px solid #c4c4c4;border-radius:3px;background-color:#e9e9e9;}
+.btn_dtl:hover{background-color: #999;}
+.btn_dtl:hover::before{color:#fff;}
 
 /* send */
 .receiver_wrap{min-height:150px;margin-top:10px;padding:12px 15px;border:1px solid #d7d7d7;background-color:#fff;}
-.receiver_wrap li{display:inline-block;margin:0 10px 10px 0;padding:1px 7px 2px;border:1px solid ;border-radius:50px;font-size:14px;font-weight:bold;color:#333;}
+.receiver_wrap li{display:inline-block;margin:0 10px 10px 0;padding:1px 0 2px 7px;border:1px solid ;border-radius:50px;font-size:14px;font-weight:bold;color:#333;}
 .receiver_wrap li i{cursor:pointer;color:#333;}
 .receiver_wrap li:hover{background-color:#697683;color:#fff;}
 .receiver_wrap li:hover i{color:#fff;}
@@ -52,12 +58,16 @@ section{margin-top:30px;}
 .btn_login{padding:10px;}
 .login_join{margin-right:10px;}
 
+/* slide */
+.slide_wrap{position:fixed;top:0;left:0;width:20em;height:100%;}
+.slide_wrap.on{margin-left:-20em;}
 /* sub common */
 .contents .wrap{padding:10px;}
 .tit{padding:15px 20px;}
 .menu li a{font-size:1.2em;font-weight:normal;}
 .tit_h2{padding:0 0 .8em;font-size:1.7em;}
 .btn_open{top:5px;}
+.btn_change{top:10px;}
 .tit_h3{margin-bottom:10px;font-size:16px;font-weight:bold;line-height:15px;}
 .tit_h3::before{position:relative;top:-2px;display:inline-block;content:'';width:5px;height:5px;margin-right:5px;border-radius:3px;background-color:#192d44;}
 .box{padding:20px;background-color:#f2f2f2;}
@@ -69,6 +79,8 @@ section{margin-top:30px;}
 .locate li::before{content:"\e850";font-family:'axicon';color:#999;}
 .locate li:first-child::before{display:none;}
 .locate li a{color:#999;font-weight:normal;}
+
+.search li label{margin:0 5px;}
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
