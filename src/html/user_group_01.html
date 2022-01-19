@@ -1,0 +1,100 @@
+@@include('inc/top.html')
+
+<body>
+  <!-- Contents -->
+  <div class="wrapper">
+    <div class="contents">
+      <div class="tit">
+        <div class="locate">
+          <ul>
+            <li><a href="user_group.html">그룹</a></li>
+            <li>그룹 생성</li>
+          </ul>
+        </div>
+        <h2 class="tit_h2">그룹 생성</h2>
+      </div>
+      <div class="wrap">
+        <div class="alignR">
+          <button type="button" class="btn_s btn_blue">저장</button>
+        </div>
+        <section>
+          <div class="box">
+            <table class="filebox_wrap">
+              <colgroup>
+                <col width="25%">
+                <col width="75%">
+              </colgroup>
+              <tr>
+                <th>그룹명</th>
+                <td><input type="text"></td>
+              </tr>
+              <tr>
+                <th>파일 불러오기</th>
+                <td>
+                  <div class="filebox bs3-primary">
+                    <input class="upload-name" value="파일 첨부" disabled="disabled" title="파일첨부">
+                    <label for="ex_filename1" class="btn_skyblue">불러오기</label>
+                    <input type="file" id="ex_filename1" class="upload-hidden" title="파일첨부">
+                  </div>
+                  <p class="file_info alignL">
+                    xls, xlsx, csv, txt 파일만 불러올 수 있습니다.<br>
+                    파일 A열에 국가번호 포함 숫자로 된 휴대폰번호만 들어가도록 양식을 맞춰 주세요.
+                    <br>
+                  <div class="number_ex">
+                    <b>(예시)</b>
+                    <ul>
+                      <li><span>821011111111</span><span class="number_o">O</span></li>
+                      <li><span>01011111111</span><span class="number_x">X</span></li>
+                      <li><span>8201011111111</span><span class="number_x">X</span></li>
+                    </ul>
+                  </div>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </section>
+        <section>
+          <div class="box">
+            <h3 class="tit_h3">불러온 연락처</h3>
+            <div class="group_wrap flex_wrap f_sb">
+              <ul>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+                <li>+821234567891</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    @@include('inc/header.html')
+  </div>
+
+  <script>
+    var fileTarget = $('.filebox .upload-hidden');
+    fileTarget.on('change', function () {
+      if (window.FileReader) {
+        var filename = $(this)[0].files[0].name;
+      } else {
+        var filename = $(this).val().split('/').pop().split('\\').pop();
+      }
+      $(this).siblings('.upload-name').val(filename);
+    });
+  </script>
+  <!-- // Contents -->
+</body>
+
+</html>

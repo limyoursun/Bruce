@@ -1,0 +1,69 @@
+@@include('inc/top.html')
+
+<body>
+  <!-- Contents -->
+  <div class="wrapper">
+    <div class="contents">
+      <div class="tit">
+        <div class="locate">
+          <ul>
+            <li><a href="#">게시판</a></li>
+            <li>글쓰기</li>
+          </ul>
+        </div>
+        <h2 class="tit_h2">글쓰기</h2>
+      </div>
+      <div class="wrap">
+        <section class="">
+          <table class="tbl_write tbl_blackTop">
+            <thead>
+              <th>
+                <label for="">종류</label>
+              </th>
+              <td>
+                <div>
+                  <span class="flex_wrap">
+                    <select title="게시글 분류">
+                      <option value="종류">종류</option>
+                      <option value="문의사항">문의사항</option>
+                      <option value="요청사항">요청사항</option>
+                      <option value="에러 및 이슈사항">에러 및 이슈사항</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                  </span>
+                </div>
+              </td>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  <label for="">제목</label>
+                </th>
+                <td>
+                  <input type="text" placeholder="제목">
+                </td>
+              </tr>
+              <th>
+                <label for="">내용</label>
+              </th>
+              <td>
+                <div class="manual_body">
+                  <textarea name="content" placeholder="내용"></textarea>
+                </div>
+              </td>
+            </tbody>
+          </table>
+          <div class="alignR">
+            <button type="button" class="btn_s btn_blue">등록</button>
+            <button type="button" class="btn_s btn_gray">수정</button>
+            <button type="button" class="btn_s btn_red">취소</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    @@include('inc/header.html')
+  </div>
+  <!-- // Contents -->
+</body>
+
+</html>

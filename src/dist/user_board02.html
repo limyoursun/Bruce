@@ -36,41 +36,56 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="user_group.html">그룹</a></li>
+            <li><a href="#">게시판</a></li>
+            <li>글쓰기</li>
           </ul>
         </div>
-        <h2 class="tit_h2">그룹</h2>
+        <h2 class="tit_h2">글쓰기</h2>
       </div>
       <div class="wrap">
-        <section>
-          <div class="table_wrap">
-            <div class="tbl_tit">
-              <h3 class="tit_h3">그룹 목록</h3>
-              <div class="search_area">
-                <ul class="search f_s">
-                  <li>
-                    <label for="date_timepicker_start">기간</label>
-                    <span class="period period_multi">
-                      <input type="text" id="date_timepicker_start" class="input_calendar" value="YYYY/MM/DD"
-                        placeholder="기간 시작일 선택" title="기간 시작일 선택">
-                      <input type="text" id="date_timepicker_end" class="input_calendar" value="YYYY/MM/DD"
-                        placeholder="기간 종료일 선택" title="기간 종료일 선택">
-                    </span>
-                    <button type="button" class="btn_s btn_blue">조회</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="tbl_tit alignR" style="margin-bottom:10px;">
-                <button type="button" class="btn_s btn_blue" onClick="location.href='user_group_01.html'">그룹 생성</button>
-                <button type="button" class="btn_s btn_gray">그룹 삭제</button>
-              </div>
-              <div class="tbl_wrap">
-                <table id="jqGrid" class="jq-grid"></table>
-                <div id="jqGridPager"></div>
-              </div>
-            </div>
+        <section class="">
+          <table class="tbl_write tbl_blackTop">
+            <thead>
+              <th>
+                <label for="">종류</label>
+              </th>
+              <td>
+                <div>
+                  <span class="flex_wrap">
+                    <select title="게시글 분류">
+                      <option value="종류">종류</option>
+                      <option value="문의사항">문의사항</option>
+                      <option value="요청사항">요청사항</option>
+                      <option value="에러 및 이슈사항">에러 및 이슈사항</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                  </span>
+                </div>
+              </td>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  <label for="">제목</label>
+                </th>
+                <td>
+                  <input type="text" placeholder="제목">
+                </td>
+              </tr>
+              <th>
+                <label for="">내용</label>
+              </th>
+              <td>
+                <div class="manual_body">
+                  <textarea name="content" placeholder="내용"></textarea>
+                </div>
+              </td>
+            </tbody>
+          </table>
+          <div class="alignR">
+            <button type="button" class="btn_s btn_blue">등록</button>
+            <button type="button" class="btn_s btn_gray">수정</button>
+            <button type="button" class="btn_s btn_red">취소</button>
           </div>
         </section>
       </div>
@@ -128,52 +143,5 @@
   </div>
   <!-- // Contents -->
 </body>
-
-<script>
-  var mydata = [
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"}
-  ];
-  $("#jqGrid").jqGrid({
-    data: mydata,
-    datatype: "local",
-    colModel: [
-      { label: '생성일자', name: 't1', align: 'center' },
-      { label: '그룹명', name: 't2', align: 'center' },
-      { label: '연락처 수', name: 't3', align: 'center' },
-      { label: '연락처 보기', name: 't4', align: 'center', formatter: detail }
-    ],
-    //rownumbers:true,
-    loadonce: true,
-    viewrecords: true,
-    scrollOffset: true,
-    gridview: true,
-    pager: "#jqGridPager",
-    autowidth: true,
-    shrinkToFit: false,
-    multiselect: true,
-    height: 'auto'
-  });
-  // 창 크기 변경 시, 너비 자동 조절
-  $(window).on('resize.jqGrid', function () {
-    jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
-  });
-
-  function detail(cellValue, options, rowdata, action) {
-    var html, txt = "";
-    switch (cellValue) {
-      case "보기":
-        txt = "dtl";
-        break;
-      default:
-        txt = "none";
-    }
-    html = '<button type="button" class="axi btn_' + txt + '"></button>';
-    return html;
-  }
-</script>
 
 </html>

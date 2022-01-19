@@ -5,29 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bruce</title>
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
-  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
-  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
-  <link rel="stylesheet" href="../css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/sub.css">
-  <link rel="stylesheet" href="../css/pop.css">
-  <script src="../plugins/jquery/dist/jquery.min.js"></script>
-  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
-  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
-  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
-  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
-  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
-  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-  <script src="../js/ui_common.js"></script>
-  <script src="../js/file_attach.js"></script>
-
-
-
-<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
   <link rel="stylesheet" href="../plugins/axicon/axicon.min.css">
   <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css">
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
@@ -38,16 +16,17 @@
   <link rel="stylesheet" href="../css/sub.css">
   <link rel="stylesheet" href="../css/pop.css">
 
-<script src="../plugins/jquery/dist/jquery.min.js"></script>
-<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
-<script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
-<script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
-<script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
-<script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
-<script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-<script src="../plugins/echarts/dist/echarts.min.js"></script>
-<script src="../js/ui_common.js"></script>
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../plugins/echarts/dist/echarts.min.js"></script>
+  <script src="../js/file_attach.js"></script>
+  <script src="../js/ui_common.js"></script>
 </head>
 
 <body>
@@ -63,8 +42,8 @@
         </div>
         <h2 class="tit_h2">충전 내역</h2>
         <ul class="menu">
-          <li><a href="user_record01.html">충전하기</a></li>
-          <li class="on"><a href="user_record02.html">충전 내역</a></li>
+          <li><a href="user_add01.html">충전하기</a></li>
+          <li class="on"><a href="user_add02.html">충전 내역</a></li>
         </ul>
       </div>
       <div class="wrap">
@@ -116,10 +95,10 @@
         <a href="user_group.html" class="depth1 empty">그룹</a>
       </li>
       <li>
-        <a href="#" class="depth1 new">충전소</a>
+        <a href="user_add01.html" class="depth1 new">충전소</a>
         <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
         <ul class="depth2">
-          <li><a href="#">충전하기</a></li>
+          <li><a href="user_add01.html">충전하기</a></li>
           <li><a href="user_add02.html">충전 내역</a></li>
         </ul>
       </li>
@@ -127,15 +106,17 @@
         <a href="#" class="depth1 empty">내 정보</a>
       </li>
       <li>
-        <a href="#" class="depth1 empty">게시판</a>
+        <a href="user_board01.html" class="depth1 empty">게시판</a>
       </li>
       <li>
-        <a href="#" class="depth1 empty">공지사항</a>
+        <a href="user_notice.html" class="depth1 empty">공지사항</a>
       </li>
     </ul>
   </div>
-  <button type="button" class="btn_open"></button>
-  <button type="button" class="btn_change">Admin 전환</button>
+  <div class="fix_wrap">
+    <button type="button" class="btn_open"></button>
+    <button type="button" class="btn_change">Admin 전환</button>
+  </div>
 </div>
 
 <script> // slide menu button

@@ -1,0 +1,107 @@
+@@include('inc/top.html')
+
+<body>
+  <!-- Contents -->
+  <div class="wrapper">
+    <div class="contents">
+      <div class="tit">
+        <div class="locate">
+          <ul>
+            <li><a href="#">게시판</a></li>
+            <li>글쓰기</li>
+          </ul>
+        </div>
+        <h2 class="tit_h2">글쓰기</h2>
+      </div>
+      <div class="wrap">
+        <section class="">
+          <table class="tbl_write tbl_blackTop">
+            <colgroup>
+              <col width="20%">
+              <col width="30%">
+              <col width="20%">
+              <col width="30%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  <label for="">등록일</label>
+                </th>
+                <td>
+                  <span>2020-01-01 18:00:45</span>
+                </td>
+                <th>
+                  <label for="">관리자</label>
+                </th>
+                <td>
+                  <span>홍길동</span>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  <label for="">제목</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" placeholder="제목">
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label for="">내용</label>
+                </th>
+                <td colspan="3">
+                  <div class="manual_body">
+                    <textarea name="content" placeholder="내용"></textarea>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>첨부파일</th>
+                <td colspan="3">
+                  <div class="bbs_attach">
+                    <input type="hidden" name="type" value="attach">
+                    <div class="file_attach btn_attach btn_gray">파일첨부
+                      <input id="attachFiles" type="file" name="file" title="파일첨부하기" class="btn_file" multiple="">
+                    </div>
+                    <div id="file-drop" class="drop_zone">
+                      <p class="drop_info">파일을 드래그 하세요.</p>
+                      <ul id="fileList">
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="alignR">
+            <button type="button" class="btn_s btn_blue">등록</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    @@include('inc/admin_header.html')
+  </div>
+
+  <script>
+    $(function () {
+      /* flie */
+      fileDropEvt();
+
+      /* calendar */
+      $.datetimepicker.setLocale('kr');
+      $('#datetimepicker').datetimepicker({
+        buttonImage: "../images/btn_calendar.png"
+      });
+      $('#datetimepicker2').datetimepicker({
+        format: 'Y/m/d',
+        formatDate: 'Y/m/d',
+        timepicker: false
+      });
+    })
+  </script>
+  <!-- // Contents -->
+</body>
+
+</html>

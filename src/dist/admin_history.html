@@ -36,16 +36,16 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="user_group.html">그룹</a></li>
+            <li><a href="admin_history.html">문자 전송 내역</a></li>
           </ul>
         </div>
-        <h2 class="tit_h2">그룹</h2>
+        <h2 class="tit_h2">문자 전송 내역</h2>
       </div>
       <div class="wrap">
         <section>
           <div class="table_wrap">
             <div class="tbl_tit">
-              <h3 class="tit_h3">그룹 목록</h3>
+              <h3 class="tit_h3">문자 전송 내역 목록</h3>
               <div class="search_area">
                 <ul class="search f_s">
                   <li>
@@ -56,20 +56,36 @@
                       <input type="text" id="date_timepicker_end" class="input_calendar" value="YYYY/MM/DD"
                         placeholder="기간 종료일 선택" title="기간 종료일 선택">
                     </span>
+                  </li>
+                  <li>
+                    <label for="">상태</label>
+                    <select name="" id="">
+                      <option value="전체">전체</option>
+                      <option value="대기">대기</option>
+                      <option value="충전완료">충전완료</option>
+                      <option value="충전취소">충전취소</option>
+                    </select>
+                  </li>
+                  <li>
+                    <label for="">아이디</label>
+                    <input type="text">
+                  </li>
+                  <li>
+                    <label for="">이름</label>
+                    <input type="text">
+                  </li>
+                  <li>
                     <button type="button" class="btn_s btn_blue">조회</button>
                   </li>
                 </ul>
               </div>
             </div>
-            <div>
-              <div class="tbl_tit alignR" style="margin-bottom:10px;">
-                <button type="button" class="btn_s btn_blue" onClick="location.href='user_group_01.html'">그룹 생성</button>
-                <button type="button" class="btn_s btn_gray">그룹 삭제</button>
+            <div class="tbl_wrap">
+              <div class="tbl_top f_e">
+                <button type="button" class="btn_s btn_blue">엑셀 다운로드</button>
               </div>
-              <div class="tbl_wrap">
-                <table id="jqGrid" class="jq-grid"></table>
-                <div id="jqGridPager"></div>
-              </div>
+              <table id="jqGrid" class="jq-grid"></table>
+              <div id="jqGridPager"></div>
             </div>
           </div>
         </section>
@@ -78,39 +94,28 @@
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
-      <p><b>홍길동</b>님</p>
-      <p><i class="axi axi-money"></i><span>1,000</span></p>
+      <p><b>관리자</b>님</p>
     </div>
     <ul id="gnb">
       <li>
-        <a href="user_send.html" class="depth1 empty">문자 보내기</a>
-      </li>
-      <li>
-        <a href="user_record01_1.html" class="depth1 on active">전송 내역</a>
+        <a href="admin_user01.html" class="depth1 on active">유저 관리</a>
         <ul class="depth2">
-          <li><a href="user_record01_1.html" class="on">문자 전송 내역</a></li>
-          <li><a href="user_record02.html">문자 예약 내역</a></li>
+          <li><a href="admin_user01.html" class="on">유저 정보</a></li>
+          <li><a href="admin_user02.html">문자 전송 내역</a></li>
+          <li><a href="admin_user03.html">충전 내역</a></li>
+          <li><a href="admin_user04.html">그룹 생성 내역</a></li>
         </ul>
       </li>
       <li>
-        <a href="user_group.html" class="depth1 empty">그룹</a>
+        <a href="admin_payment.html" class="depth1 empty">결제 관리</a>
       </li>
       <li>
-        <a href="user_add01.html" class="depth1 new">충전소</a>
-        <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
-        <ul class="depth2">
-          <li><a href="user_add01.html">충전하기</a></li>
-          <li><a href="user_add02.html">충전 내역</a></li>
-        </ul>
+        <a href="admin_fill.html" class="depth1 empty">충전 내역</a>
+      <li>
+        <a href="admin_history.html" class="depth1 empty">문자 전송 내역</a>
       </li>
       <li>
-        <a href="#" class="depth1 empty">내 정보</a>
-      </li>
-      <li>
-        <a href="user_board01.html" class="depth1 empty">게시판</a>
-      </li>
-      <li>
-        <a href="user_notice.html" class="depth1 empty">공지사항</a>
+        <a href="admin_notice.html" class="depth1 empty">공지사항</a>
       </li>
     </ul>
   </div>
@@ -129,22 +134,27 @@
   <!-- // Contents -->
 </body>
 
+
 <script>
   var mydata = [
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"},
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "보기"}
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"}
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
     datatype: "local",
     colModel: [
-      { label: '생성일자', name: 't1', align: 'center' },
-      { label: '그룹명', name: 't2', align: 'center' },
-      { label: '연락처 수', name: 't3', align: 'center' },
-      { label: '연락처 보기', name: 't4', align: 'center', formatter: detail }
+      { label: '아이디', name: 't1', align: 'center' },
+      { label: '날짜', name: 't2', align: 'center' },
+      { label: '이름', name: 't3', align: 'center' },
+      { label: '수신자 수', name: 't4', align: 'center' },
+      { label: '수신자 지정', name: 't5', align: 'center' },
+      { label: '내용 보기', name: 't6', align: 'center' , formatter: detail },
+      { label: '연락처 보기', name: 't7', align: 'center' , formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
@@ -154,12 +164,12 @@
     pager: "#jqGridPager",
     autowidth: true,
     shrinkToFit: false,
-    multiselect: true,
-    height: 'auto'
+    height: 400
   });
+
   // 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
-    jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
+    jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
   function detail(cellValue, options, rowdata, action) {

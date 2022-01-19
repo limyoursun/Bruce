@@ -1,0 +1,39 @@
+<div class="slide_wrap">
+  <div class="slide">
+    <div class="flex_wrap f_sb util_user">
+      <p><b>관리자</b>님</p>
+    </div>
+    <ul id="gnb">
+      <li>
+        <a href="admin_user01.html" class="depth1 on active">유저 관리</a>
+        <ul class="depth2">
+          <li><a href="admin_user01.html" class="on">유저 정보</a></li>
+          <li><a href="admin_user02.html">문자 전송 내역</a></li>
+          <li><a href="admin_user03.html">충전 내역</a></li>
+          <li><a href="admin_user04.html">그룹 생성 내역</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="admin_payment.html" class="depth1 empty">결제 관리</a>
+      </li>
+      <li>
+        <a href="admin_fill.html" class="depth1 empty">충전 내역</a>
+      <li>
+        <a href="admin_history.html" class="depth1 empty">문자 전송 내역</a>
+      </li>
+      <li>
+        <a href="admin_notice.html" class="depth1 empty">공지사항</a>
+      </li>
+    </ul>
+  </div>
+  <div class="fix_wrap">
+    <button type="button" class="btn_open"></button>
+    <button type="button" class="btn_change">Admin 전환</button>
+  </div>
+</div>
+
+<script> // slide menu button
+  $('.btn_open').on('click', function () {
+    $('.slide_wrap').toggleClass('on');
+  })
+</script>

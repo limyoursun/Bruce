@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruce</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css">
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
+  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../plugins/echarts/dist/echarts.min.js"></script>
+  <script src="../js/file_attach.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
+
+<body>
+  <!-- Contents -->
+  <div class="wrapper">
+    <div class="contents">
+      <div class="tit">
+        <div class="locate">
+          <ul>
+            <li><a href="#">게시판</a></li>
+            <li>글쓰기</li>
+          </ul>
+        </div>
+        <h2 class="tit_h2">글쓰기</h2>
+      </div>
+      <div class="wrap">
+        <section class="">
+          <table class="tbl_write tbl_blackTop">
+            <colgroup>
+              <col width="20%">
+              <col width="30%">
+              <col width="20%">
+              <col width="30%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  <label for="">등록일</label>
+                </th>
+                <td>
+                  <span>2020-01-01 18:00:45</span>
+                </td>
+                <th>
+                  <label for="">관리자</label>
+                </th>
+                <td>
+                  <span>홍길동</span>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  <label for="">제목</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" placeholder="제목">
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label for="">내용</label>
+                </th>
+                <td colspan="3">
+                  <div class="manual_body">
+                    <textarea name="content" placeholder="내용"></textarea>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>첨부파일</th>
+                <td colspan="3">
+                  <div class="bbs_attach">
+                    <input type="hidden" name="type" value="attach">
+                    <div class="file_attach btn_attach btn_gray">파일첨부
+                      <input id="attachFiles" type="file" name="file" title="파일첨부하기" class="btn_file" multiple="">
+                    </div>
+                    <div id="file-drop" class="drop_zone">
+                      <p class="drop_info">파일을 드래그 하세요.</p>
+                      <ul id="fileList">
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="alignR">
+            <button type="button" class="btn_s btn_blue">등록</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="slide_wrap">
+  <div class="slide">
+    <div class="flex_wrap f_sb util_user">
+      <p><b>관리자</b>님</p>
+    </div>
+    <ul id="gnb">
+      <li>
+        <a href="admin_user01.html" class="depth1 on active">유저 관리</a>
+        <ul class="depth2">
+          <li><a href="admin_user01.html" class="on">유저 정보</a></li>
+          <li><a href="admin_user02.html">문자 전송 내역</a></li>
+          <li><a href="admin_user03.html">충전 내역</a></li>
+          <li><a href="admin_user04.html">그룹 생성 내역</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="admin_payment.html" class="depth1 empty">결제 관리</a>
+      </li>
+      <li>
+        <a href="admin_fill.html" class="depth1 empty">충전 내역</a>
+      <li>
+        <a href="admin_history.html" class="depth1 empty">문자 전송 내역</a>
+      </li>
+      <li>
+        <a href="admin_notice.html" class="depth1 empty">공지사항</a>
+      </li>
+    </ul>
+  </div>
+  <div class="fix_wrap">
+    <button type="button" class="btn_open"></button>
+    <button type="button" class="btn_change">Admin 전환</button>
+  </div>
+</div>
+
+<script> // slide menu button
+  $('.btn_open').on('click', function () {
+    $('.slide_wrap').toggleClass('on');
+  })
+</script>
+  </div>
+
+  <script>
+    $(function () {
+      /* flie */
+      fileDropEvt();
+
+      /* calendar */
+      $.datetimepicker.setLocale('kr');
+      $('#datetimepicker').datetimepicker({
+        buttonImage: "../images/btn_calendar.png"
+      });
+      $('#datetimepicker2').datetimepicker({
+        format: 'Y/m/d',
+        formatDate: 'Y/m/d',
+        timepicker: false
+      });
+    })
+  </script>
+  <!-- // Contents -->
+</body>
+
+</html>

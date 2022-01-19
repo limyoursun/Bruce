@@ -36,21 +36,21 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="user_record01_1.html">전송내역</a></li>
-            <li>문자 전송 내역</li>
+            <li><a href="use_add01.html">충전소</a></li>
+            <li>충전하기</li>
           </ul>
         </div>
-        <h2 class="tit_h2">문자 전송 내역</h2>
+        <h2 class="tit_h2">충전하기</h2>
         <ul class="menu">
-          <li class="on"><a href="user_record01_1.html">문자 전송 내역</a></li>
-          <li><a href="user_record02.html">문자 예약 내역</a></li>
+          <li class="on"><a href="user_add01.html">충전하기</a></li>
+          <li><a href="user_add02.html">충전 내역</a></li>
         </ul>
       </div>
       <div class="wrap">
         <section>
           <div class="table_wrap">
             <div class="tbl_tit">
-              <h3 class="tit_h3">문자 전송 내역</h3>
+              <h3 class="tit_h3">훈련결과 목록</h3>
               <div class="search_area">
                 <ul class="search f_s">
                   <li>
@@ -130,25 +130,22 @@
 
 <script>
     var mydata = [
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "보기", "t9": "보기" },
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"}
     ];
     $("#jqGrid").jqGrid({
       data: mydata,
       datatype: "local",
       colModel: [
-        { label: '전송시간', name: 't1', align: 'center' },
-        { label: '수신자 수', name: 't2', align: 'center' },
-        { label: '수신자 지정', name: 't3', align: 'center' },
-        { label: '사용크레딧', name: 't4', align: 'center' },
-        { label: '발송여부', name: 't5', align: 'center', width: 100 },
-        { label: '성공', name: 't6', align: 'center' },
-        { label: '실패', name: 't7', align: 'center' },
-        { label: '내용 보기', name: 't8', align: 'center', width: 100, formatter:detail },
-        { label: '수신자 보기', name: 't9', align: 'center', width: 100,formatter:detail  }
+        { label: '시간', name: 't1', align: 'center' },
+        { label: '충전한 크레딧', name: 't2', align: 'center' },
+        { label: '충전 방법', name: 't3', align: 'center' },
+        { label: '충전 상태', name: 't4', align: 'center' },
+        { label: '상세 내역', name: 't5', align: 'center', formatter:detail }
       ],
       //rownumbers:true,
       loadonce: true,
@@ -165,6 +162,7 @@
       jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
     });
 
+    
 function detail(cellValue, options, rowdata, action) {
   var html, txt = "";
   switch (cellValue) {
@@ -177,7 +175,6 @@ function detail(cellValue, options, rowdata, action) {
   html = '<button type="button" class="axi btn_' + txt + '"></button>';
   return html;
 }
-
 </script>
 
 </html>
