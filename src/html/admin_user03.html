@@ -29,11 +29,11 @@
                   <li>
                     <label for="date_timepicker_start">기간</label>
                     <span class="period period_multi">
-                  <input type="text" id="date_timepicker_start" class="input_calendar" value="YYYY/MM/DD"
-                    placeholder="기간 시작일 선택" title="기간 시작일 선택">
-                  <input type="text" id="date_timepicker_end" class="input_calendar" value="YYYY/MM/DD"
-                    placeholder="기간 종료일 선택" title="기간 종료일 선택">
-                </span>
+                      <input type="text" id="date_timepicker_start" class="input_calendar" value="YYYY/MM/DD"
+                        placeholder="기간 시작일 선택" title="기간 시작일 선택">
+                      <input type="text" id="date_timepicker_end" class="input_calendar" value="YYYY/MM/DD"
+                        placeholder="기간 종료일 선택" title="기간 종료일 선택">
+                    </span>
                   </li>
                   <li>
                     <label for="">충전방법</label>
@@ -53,7 +53,7 @@
                 </ul>
               </div>
             </div>
-            <div class="tbl_wrap">
+            <div class="tbl_wrap row_10">
               <table id="jqGrid" class="jq-grid"></table>
               <div id="jqGridPager"></div>
             </div>
@@ -88,7 +88,7 @@
       { label: '충전 크레딧', name: 't3', align: 'center' },
       { label: '충전 방법', name: 't4', align: 'center' },
       { label: '사용크레딧', name: 't5', align: 'center' },
-      { label: '상세 내역', name: 't6', align: 'center', formatter: detail}
+      { label: '상세 내역', name: 't6', align: 'center', formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
@@ -98,7 +98,8 @@
     pager: "#jqGridPager",
     autowidth: true,
     shrinkToFit: false,
-    height:400
+    height: 298,
+    rowNum: 10
   });
 
   // 창 크기 변경 시, 너비 자동 조절

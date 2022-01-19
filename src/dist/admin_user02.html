@@ -54,7 +54,7 @@
             <div class="tbl_tit">
               <h3 class="tit_h3">문자 전송 목록</h3>
             </div>
-            <div class="tbl_wrap">
+            <div class="tbl_wrap row_10">
               <table id="jqGrid" class="jq-grid"></table>
               <div id="jqGridPager"></div>
             </div>
@@ -89,6 +89,9 @@
         <a href="admin_notice.html" class="depth1 empty">공지사항</a>
       </li>
     </ul>
+  </div>
+  <div class="logout alignC">
+    <button type="button" class="btn_m btn_green">로그아웃</button>
   </div>
   <div class="fix_wrap">
     <button type="button" class="btn_open"></button>
@@ -127,17 +130,19 @@
       { label: '발송여부', name: 't6', align: 'center', width: 100 },
       { label: '성공', name: 't7', align: 'center' },
       { label: '실패', name: 't8', align: 'center' },
-      { label: '내용 보기', name: 't9', align: 'center', width: 100, formatter: detail},
-      { label: '수신자 보기', name: 't10', align: 'center', width: 100, formatter: detail}
+      { label: '내용 보기', name: 't9', align: 'center', width: 100, formatter: detail },
+      { label: '수신자 보기', name: 't10', align: 'center', width: 100, formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
     viewrecords: true,
     scrollOffset: true,
     gridview: true,
-    pager: "#jqGrid2Pager",
+    pager: "#jqGridPager",
     autowidth: true,
-    shrinkToFit: false
+    shrinkToFit: false,
+    height: 298,
+    rowNum: 10
   });
 
   // 창 크기 변경 시, 너비 자동 조절
