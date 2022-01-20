@@ -1,0 +1,79 @@
+<div class="pop_overlay p_group01_1">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>연락처 보기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="box">
+            <div class="group_wrap flex_wrap f_sb">
+              <ul>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+              </ul>
+            </div>
+            <p>총 연락처 수 : <span>10</span>명</p>
+          </div>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 수신자 삭제
+  $('.axi-close').on('click', function () {
+    $(this).parent('li').remove();
+  })
+  $('.receiver_wrap').on('click', function () {
+    var parentUl = $(this).find('ul').children().length;
+    if (parentUl < 1) {
+      $(this).find('ul').remove();
+    }
+  })
+</script>

@@ -255,7 +255,8 @@ td span.flex_wrap input{width:auto;}
 .alignLeft{padding-left:100px;}
 
 /* table */
-td, th{font-size:13px;}
+td, th{font-size:13px;text-align:left;}
+td>span{line-height:32px;}
 .tbl_top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
 .tbl_top .btn_wrap{margin:0 0 0 auto;margin-bottom:20px;}
 .btn_wrap_s .btn_axi{padding:2px 9px;font-size:12px;}
@@ -270,6 +271,7 @@ td, th{font-size:13px;}
 .tbl_blackTop td:last-child{border-right-color:#e8e8e8;}
 .tbl_blackTop td span{padding:6px 0;}
 .tbl_write{margin-bottom:10px;}
+.tbl_write th{text-align:center;}
 .tbl_write span.flex_wrap{flex-wrap:nowrap;}
 .tbl_write select{width:auto;margin-right:5px;}
 .tbl_write input{width:100%;}

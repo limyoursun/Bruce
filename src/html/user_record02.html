@@ -47,6 +47,15 @@
         </section>
       </div>
     </div>
+    
+    <!-- 내용 보기 -->
+    @@include('inc/p_record01_1.html')
+    <!-- // 내용 보기 -->
+    
+    <!-- 수신자 보기 -->
+    @@include('inc/p_record01_2.html')
+    <!-- // 수신자 보기 -->
+    
     @@include('inc/header.html')
   </div>
   <!-- // Contents -->
@@ -165,6 +174,13 @@
     html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  $('.btn_contents').on('click', function () {
+    $('.p_record01_1').show();
+  })
+  $('.btn_recipient').on('click', function () {
+    $('.p_record01_2').show();
+  })
 </script>
 
 </html>

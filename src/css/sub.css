@@ -22,18 +22,20 @@ section{margin-top:30px;}
 .box{padding:20px;background-color:#f2f2f2;}
 .ico_arrow.horizontal{position:relative;left:50%;cursor:pointer;width:36px;height:36px;margin:40px 0 20px;background: url(../images/ico_arrow.png);align-self:center;transform:rotate(90deg);}
 .ico_arrow.horizontal:hover{background-position-y:100%;}
+
 .axi{margin:3px 10px 0 0;font-size:0!important;}
 .axi::before{font-size:14px;font-family:'axicon';}
-.btn_dtl{margin:2px;padding:3px;border:1px solid #c4c4c4;border-radius:3px;background-color:#e9e9e9;}
-.btn_dtl:hover{background-color: #999;}
-.btn_dtl:hover::before{color:#fff;}
-.btn_recipient::before{content:"\f00e";font-weight:normal;}
-.btn_contents::before{content:"\f212";font-weight:normal;}
+.axi-close:before{position:relative;right:-7px;}
 .axi.btn_file::before{content:"\e802";font-weight:normal;}
-.btn_file{margin:0;padding:5px;border:1px solid #c4c4c4;border-radius:3px;background-color:#e9e9e9;}
 .axi.btn_check::before{content:"\f1ae";font-weight:normal;}
 .axi.btn_close::before{content:"\f1b6";font-weight:normal;}
 .tbl_top .axi{margin:0 3px 0 0;}
+.btn_dtl:hover{background-color: #999;}
+.btn_dtl:hover::before{color:#fff;}
+.btn_file{margin:0;padding:5px;border:1px solid #c4c4c4;border-radius:3px;background-color:#e9e9e9;}
+.btn_dtl{margin:2px;padding:3px;border:1px solid #c4c4c4;border-radius:3px;background-color:#e9e9e9;}
+.btn_recipient::before{content:"\f212";font-weight:normal;}
+.btn_contents::before{content:"\f00e";font-weight:normal;}
 
 /* user */
   /* send */
@@ -49,9 +51,11 @@ section{margin-top:30px;}
   .byte_alert.lms::after{position:absolute;top:-2px;display:inline-block;content:'LMS';margin-left:5px;padding:2px 5px;border-radius:3px;background-color:#ff5959;color:#fff;}
   /* group */
   .group_wrap{min-width:210px;height:200px;overflow-y:scroll;}
-  .group_wrap li{margin-bottom:5px;padding:2px 0 2px 6px;border:1px solid ;border-radius:50px;font-size:14px;font-weight:bold;color:#333;}
+  .group_wrap li{margin-bottom:5px;padding:2px 6px;border:1px solid ;border-radius:50px;font-size:14px;font-weight:bold;color:#333;}
   .group_wrap li:hover{background-color: #697683;color:#fff;}
 .group_wrap li i{cursor:pointer;}
+/* info */
+.tbl_info th{width:75px;font-weight: bold;}
 
 /* admin */
   /* user */

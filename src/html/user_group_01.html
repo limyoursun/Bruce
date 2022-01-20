@@ -60,20 +60,48 @@
             <h3 class="tit_h3">불러온 연락처</h3>
             <div class="group_wrap flex_wrap f_sb">
               <ul>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
-                <li>+821234567891</li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li><span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
               </ul>
             </div>
             <p>총 연락처 수 : <span>10</span></p>
@@ -81,10 +109,12 @@
         </section>
       </div>
     </div>
+    
     @@include('inc/header.html')
   </div>
 
   <script>
+    // 파일첨부
     var fileTarget = $('.filebox .upload-hidden');
     fileTarget.on('change', function () {
       if (window.FileReader) {
@@ -94,6 +124,17 @@
       }
       $(this).siblings('.upload-name').val(filename);
     });
+
+    // 수신자 삭제
+    $('.axi-close').on('click', function () {
+      $(this).parent('li').remove();
+    })
+    $('.receiver_wrap').on('click', function () {
+      var parentUl = $(this).find('ul').children().length;
+      if (parentUl < 1) {
+        $(this).find('ul').remove();
+      }
+    })
   </script>
   <!-- // Contents -->
 </body>

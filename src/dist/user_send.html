@@ -78,8 +78,8 @@
               <p class="byte_alert"><span id="nowByte">55</span>/90 bytes</p>
               <p>credit : <span></span></p>
               <div>
-                <button type="button" class="btn_s btn_p_send01_3 btn_gray">예약</button>
-                <button type="button" class="btn_s btn_gray">전송</button>
+                <button type="button" class="btn_s btn_p_send01_3 btn_green">예약</button>
+                <button type="button" class="btn_s btn_blue">전송</button>
               </div>
             </div>
           </div>
@@ -303,6 +303,7 @@
     height: 141,
     rowNum: 5
   });
+  
   // 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
@@ -360,23 +361,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  // calendar
-  $.datepicker.setDefaults({
-    buttonImageOnly: true,
-    showOn: "both",
-    buttonImage: "../images/btn_calendar.png",
-    changeMonth: true,
-    changeYear: true,
-    numberOfMonths: 1,
-    regional: ["ko"],
-    dateFormat: "yy-mm-dd"
-  });
-  $("[dataformat='datepic']").datepicker({
-    buttonText: "날짜를 선택해주세요."
-  });
-</script>
     <!-- // 문자 예약 전송 -->
     <div class="slide_wrap">
   <div class="slide">
@@ -426,7 +410,8 @@
   </div>
 </div>
 
-<script> // slide menu button
+<script>
+  // slide menu button
   $('.btn_open').on('click', function () {
     $('.slide_wrap').toggleClass('on');
   })
