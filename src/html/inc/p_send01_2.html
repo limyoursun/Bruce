@@ -1,0 +1,82 @@
+<div class="pop_overlay p_send01_2">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>그룹 불러오기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="wrap">
+            <div class="search_area">
+              <ul class="search f_s">
+                <li>
+                  <label for="search_group">그룹명</label>
+                  <span>
+                    <input type="text" id="search_group" title="그룹명 입력">
+                    <button type="button" class="btn_s btn_blue">조회</button>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="tbl_wrap row_5">
+              <table id="jqGrid" class="jq-grid"></table>
+              <div id="jqGridPager"></div>
+            </div>
+          </div>
+          <div class="alignR" style="margin:10px 0;">
+            <button type="button" class="btn_s btn_blue">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var mydata = [
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" }
+  ];
+  $("#jqGrid").jqGrid({
+    data: mydata,
+    datatype: "local",
+    colModel: [
+      { label: '그룹명', name: 't1', align: 'center' },
+      { label: '등록 연락처 수', name: 't2', align: 'center' }
+    ],
+    multiselect:true,
+    loadonce: true,
+    viewrecords: true,
+    scrollOffset: true,
+    gridview: true,
+    pager: "#jqGridPager",
+    autowidth: true,
+    shrinkToFit: false,
+    height: 141,
+    rowNum: 5
+  });
+  // 창 크기 변경 시, 너비 자동 조절
+  $(window).on('resize.jqGrid', function () {
+    jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
+  });
+
+  function detail(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "보기":
+        txt = "dtl";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    return html;
+  }
+</script>

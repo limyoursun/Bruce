@@ -51,8 +51,8 @@
                 <button type="button" class="btn_s btn_gray">추가</button>
               </div>
               <div class="btn_wrap">
-                <button type="button" class="btn_s btn_gray">PC파일 불러오기</button>
-                <button type="button" class="btn_s btn_gray">그룹 불러오기</button>
+                <button type="button" class="btn_s btn_p_send01_1 btn_gray">PC파일 불러오기</button>
+                <button type="button" class="btn_s btn_p_send01_2 btn_gray">그룹 불러오기</button>
               </div>
             </div>
             <div class="receiver_wrap flex_wrap f_sb">
@@ -68,20 +68,6 @@
               </ul>
             </div>
           </div>
-
-          <script>
-            // 수신자
-            $('.axi-close').on('click', function () {
-              $(this).parent('li').remove();
-            })
-            $('.receiver_wrap').on('click', function () {
-              var parentUl = $(this).find('ul').children().length;
-              if (parentUl < 1) {
-                $(this).find('ul').remove();
-              }
-            })
-          </script>
-
         </section>
         <section>
           <div class="box">
@@ -92,45 +78,306 @@
               <p class="byte_alert"><span id="nowByte">55</span>/90 bytes</p>
               <p>credit : <span></span></p>
               <div>
-                <button type="button" class="btn_s btn_gray">예약</button>
+                <button type="button" class="btn_s btn_p_send01_3 btn_gray">예약</button>
                 <button type="button" class="btn_s btn_gray">전송</button>
               </div>
             </div>
-
-            <script>
-              function fn_checkByte(obj) {
-                const maxByte = 90; //최대 90바이트
-                const text_val = obj.value; //입력한 문자
-                const text_len = text_val.length; //입력한 문자수
-
-                let totalByte = 0;
-                for (let i = 0; i < text_len; i++) {
-                  const each_char = text_val.charAt(i);
-                  const uni_char = escape(each_char) //유니코드 형식으로 변환
-                  if (uni_char.length > 4) {
-                    // 한글 : 2Byte
-                    totalByte += 2;
-                  } else {
-                    // 영문,숫자,특수문자 : 1Byte
-                    totalByte += 1;
-                  }
-                }
-                if (totalByte > maxByte) {
-                  document.querySelector('.byte_alert').className = 'byte_alert lms';
-                  document.getElementById("nowByte").innerText = totalByte;
-                  document.getElementById("nowByte").style.color = "red";
-                } else {
-                  document.querySelector('.byte_alert').className = 'byte_alert';
-                  document.getElementById("nowByte").innerText = totalByte;
-                  document.getElementById("nowByte").style.color = "#3c7ed3";
-                }
-              }
-            </script>
-
           </div>
         </section>
       </div>
     </div>
+
+    <!-- PC파일 불러오기 -->
+    <div class="pop_overlay p_send01_1">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>PC 파일 불러오기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="wrap">
+            <div class="box">
+              <table class="filebox_wrap">
+                <caption>파일 불러오기</caption>
+                <colgroup>
+                  <col width="25%">
+                  <col width="75%">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th><label for="group_name">그룹명</label></th>
+                    <td><input type="text" id="group_name"></td>
+                  </tr>
+                  <tr>
+                    <th>파일 불러오기</th>
+                    <td>
+                      <div class="filebox bs3-primary">
+                        <input class="upload-name" value="파일 첨부" disabled="disabled" title="파일첨부">
+                        <label for="ex_filename1" class="btn_skyblue">불러오기</label>
+                        <input type="file" id="ex_filename1" class="upload-hidden" title="파일첨부">
+                      </div>
+                      <p class="file_info alignL">
+                        xls, xlsx, csv, txt 파일만 불러올 수 있습니다.<br>
+                        파일 A열에 국가번호 포함 숫자로 된 휴대폰번호만 들어가도록 양식을 맞춰 주세요.
+                        <br>
+                      </p>
+                      <div class="number_ex">
+                        <b>(예시)</b>
+                        <ul>
+                          <li><span>821011111111</span><span class="number_o">O</span></li>
+                          <li><span>01011111111</span><span class="number_x">X</span></li>
+                          <li><span>8201011111111</span><span class="number_x">X</span></li>
+                        </ul>
+                      </div>
+                      <p></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <section>
+              <div class="box">
+                <h3 class="tit_h3">불러온 연락처</h3>
+                <div class="group_wrap flex_wrap f_sb">
+                  <ul>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                    <li>
+                      <span>+821234567891</span>
+                      <i class="axi axi-close"></i>
+                    </li>
+                  </ul>
+                </div>
+                <p>총 연락처 수 : <span>10</span></p>
+              </div>
+            </section>
+          </div>
+          <div class="alignR" style="margin:10px 0;">
+            <button type="button" class="btn_s btn_blue">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 수신자 삭제
+  $('.axi-close').on('click', function () {
+    $(this).parent('li').remove();
+  })
+  $('.receiver_wrap').on('click', function () {
+    var parentUl = $(this).find('ul').children().length;
+    if (parentUl < 1) {
+      $(this).find('ul').remove();
+    }
+  })
+
+  // input 파일명 확인
+  var fileTarget = $('.filebox .upload-hidden');
+  fileTarget.on('change', function () {
+    if (window.FileReader) {
+      var filename = $(this)[0].files[0].name;
+    } else {
+      var filename = $(this).val().split('/').pop().split('\\').pop();
+    }
+    $(this).siblings('.upload-name').val(filename);
+  });
+</script>
+    <!-- // PC파일 불러오기 -->
+
+    <!-- 그룹 불러오기 -->
+    <div class="pop_overlay p_send01_2">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>그룹 불러오기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="wrap">
+            <div class="search_area">
+              <ul class="search f_s">
+                <li>
+                  <label for="search_group">그룹명</label>
+                  <span>
+                    <input type="text" id="search_group" title="그룹명 입력">
+                    <button type="button" class="btn_s btn_blue">조회</button>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="tbl_wrap row_5">
+              <table id="jqGrid" class="jq-grid"></table>
+              <div id="jqGridPager"></div>
+            </div>
+          </div>
+          <div class="alignR" style="margin:10px 0;">
+            <button type="button" class="btn_s btn_blue">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var mydata = [
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" },
+    { "t1": "그룹1", "t2": "100" }
+  ];
+  $("#jqGrid").jqGrid({
+    data: mydata,
+    datatype: "local",
+    colModel: [
+      { label: '그룹명', name: 't1', align: 'center' },
+      { label: '등록 연락처 수', name: 't2', align: 'center' }
+    ],
+    multiselect:true,
+    loadonce: true,
+    viewrecords: true,
+    scrollOffset: true,
+    gridview: true,
+    pager: "#jqGridPager",
+    autowidth: true,
+    shrinkToFit: false,
+    height: 141,
+    rowNum: 5
+  });
+  // 창 크기 변경 시, 너비 자동 조절
+  $(window).on('resize.jqGrid', function () {
+    jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
+  });
+
+  function detail(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "보기":
+        txt = "dtl";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    return html;
+  }
+</script>
+    <!-- // 그룹 불러오기 -->
+
+    <!-- 문자 예약 전송 -->
+    <div class="pop_overlay p_send01_3">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>문자 예약전송</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont w_400">
+          <div class="wrap">
+            <div class="box">
+              <table class="filebox_wrap">
+                <caption>파일 불러오기</caption>
+                <colgroup>
+                  <col width="25%">
+                  <col width="75%">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th><label for="group_name">예약 일시</label></th>
+                    <td><span class="datetimepicker_wrap">
+                        <input type="text" id="datetimepicker" title="date" class="input_calendar" value="발생시각 선택">
+                      </span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="alignR" style="margin:10px 0;">
+            <button type="button" class="btn_s btn_blue">예약하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // calendar
+  $.datepicker.setDefaults({
+    buttonImageOnly: true,
+    showOn: "both",
+    buttonImage: "../images/btn_calendar.png",
+    changeMonth: true,
+    changeYear: true,
+    numberOfMonths: 1,
+    regional: ["ko"],
+    dateFormat: "yy-mm-dd"
+  });
+  $("[dataformat='datepic']").datepicker({
+    buttonText: "날짜를 선택해주세요."
+  });
+</script>
+    <!-- // 문자 예약 전송 -->
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -184,6 +431,57 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+
+    <script>
+      $('.btn_p_send01_1').on('click', function () {
+        $('.p_send01_1').show();
+      })
+      $('.btn_p_send01_2').on('click', function () {
+        $('.p_send01_2').show();
+      })
+      $('.btn_p_send01_3').on('click', function () {
+        $('.p_send01_3').show();
+      })
+
+      // 수신자 삭제
+      $('.axi-close').on('click', function () {
+        $(this).parent('li').remove();
+      })
+      $('.receiver_wrap').on('click', function () {
+        var parentUl = $(this).find('ul').children().length;
+        if (parentUl < 1) {
+          $(this).find('ul').remove();
+        }
+      })
+
+      // textarea byte 계산
+      function fn_checkByte(obj) {
+        const maxByte = 90; //최대 90바이트
+        const text_val = obj.value; //입력한 문자
+        const text_len = text_val.length; //입력한 문자수
+        let totalByte = 0;
+        for (let i = 0; i < text_len; i++) {
+          const each_char = text_val.charAt(i);
+          const uni_char = escape(each_char) //유니코드 형식으로 변환
+          if (uni_char.length > 4) {
+            // 한글 : 2Byte
+            totalByte += 2;
+          } else {
+            // 영문,숫자,특수문자 : 1Byte
+            totalByte += 1;
+          }
+        }
+        if (totalByte > maxByte) {
+          document.querySelector('.byte_alert').className = 'byte_alert lms';
+          document.getElementById("nowByte").innerText = totalByte;
+          document.getElementById("nowByte").style.color = "red";
+        } else {
+          document.querySelector('.byte_alert').className = 'byte_alert';
+          document.getElementById("nowByte").innerText = totalByte;
+          document.getElementById("nowByte").style.color = "#3c7ed3";
+        }
+      }
+    </script>
   </div>
   <!-- // Contents -->
 </body>

@@ -13,7 +13,6 @@
     })
   } slideWidth();
 
-
   // calendar
   $.datepicker.setDefaults({
     buttonImageOnly: true,

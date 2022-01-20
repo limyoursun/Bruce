@@ -1,0 +1,53 @@
+<div class="pop_overlay p_send01_3">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>문자 예약전송</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont w_400">
+          <div class="wrap">
+            <div class="box">
+              <table class="filebox_wrap">
+                <caption>파일 불러오기</caption>
+                <colgroup>
+                  <col width="25%">
+                  <col width="75%">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th><label for="group_name">예약 일시</label></th>
+                    <td><span class="datetimepicker_wrap">
+                        <input type="text" id="datetimepicker" title="date" class="input_calendar" value="발생시각 선택">
+                      </span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="alignR" style="margin:10px 0;">
+            <button type="button" class="btn_s btn_blue">예약하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // calendar
+  $.datepicker.setDefaults({
+    buttonImageOnly: true,
+    showOn: "both",
+    buttonImage: "../images/btn_calendar.png",
+    changeMonth: true,
+    changeYear: true,
+    numberOfMonths: 1,
+    regional: ["ko"],
+    dateFormat: "yy-mm-dd"
+  });
+  $("[dataformat='datepic']").datepicker({
+    buttonText: "날짜를 선택해주세요."
+  });
+</script>

@@ -22,8 +22,8 @@
                 <button type="button" class="btn_s btn_gray">추가</button>
               </div>
               <div class="btn_wrap">
-                <button type="button" class="btn_s btn_gray">PC파일 불러오기</button>
-                <button type="button" class="btn_s btn_gray">그룹 불러오기</button>
+                <button type="button" class="btn_s btn_p_send01_1 btn_gray">PC파일 불러오기</button>
+                <button type="button" class="btn_s btn_p_send01_2 btn_gray">그룹 불러오기</button>
               </div>
             </div>
             <div class="receiver_wrap flex_wrap f_sb">
@@ -39,20 +39,6 @@
               </ul>
             </div>
           </div>
-
-          <script>
-            // 수신자
-            $('.axi-close').on('click', function () {
-              $(this).parent('li').remove();
-            })
-            $('.receiver_wrap').on('click', function () {
-              var parentUl = $(this).find('ul').children().length;
-              if (parentUl < 1) {
-                $(this).find('ul').remove();
-              }
-            })
-          </script>
-
         </section>
         <section>
           <div class="box">
@@ -63,46 +49,78 @@
               <p class="byte_alert"><span id="nowByte">55</span>/90 bytes</p>
               <p>credit : <span></span></p>
               <div>
-                <button type="button" class="btn_s btn_gray">예약</button>
+                <button type="button" class="btn_s btn_p_send01_3 btn_gray">예약</button>
                 <button type="button" class="btn_s btn_gray">전송</button>
               </div>
             </div>
-
-            <script>
-              function fn_checkByte(obj) {
-                const maxByte = 90; //최대 90바이트
-                const text_val = obj.value; //입력한 문자
-                const text_len = text_val.length; //입력한 문자수
-
-                let totalByte = 0;
-                for (let i = 0; i < text_len; i++) {
-                  const each_char = text_val.charAt(i);
-                  const uni_char = escape(each_char) //유니코드 형식으로 변환
-                  if (uni_char.length > 4) {
-                    // 한글 : 2Byte
-                    totalByte += 2;
-                  } else {
-                    // 영문,숫자,특수문자 : 1Byte
-                    totalByte += 1;
-                  }
-                }
-                if (totalByte > maxByte) {
-                  document.querySelector('.byte_alert').className = 'byte_alert lms';
-                  document.getElementById("nowByte").innerText = totalByte;
-                  document.getElementById("nowByte").style.color = "red";
-                } else {
-                  document.querySelector('.byte_alert').className = 'byte_alert';
-                  document.getElementById("nowByte").innerText = totalByte;
-                  document.getElementById("nowByte").style.color = "#3c7ed3";
-                }
-              }
-            </script>
-
           </div>
         </section>
       </div>
     </div>
+
+    <!-- PC파일 불러오기 -->
+    @@include('inc/p_send01_1.html')
+    <!-- // PC파일 불러오기 -->
+
+    <!-- 그룹 불러오기 -->
+    @@include('inc/p_send01_2.html')
+    <!-- // 그룹 불러오기 -->
+
+    <!-- 문자 예약 전송 -->
+    @@include('inc/p_send01_3.html')
+    <!-- // 문자 예약 전송 -->
     @@include('inc/header.html')
+
+    <script>
+      $('.btn_p_send01_1').on('click', function () {
+        $('.p_send01_1').show();
+      })
+      $('.btn_p_send01_2').on('click', function () {
+        $('.p_send01_2').show();
+      })
+      $('.btn_p_send01_3').on('click', function () {
+        $('.p_send01_3').show();
+      })
+
+      // 수신자 삭제
+      $('.axi-close').on('click', function () {
+        $(this).parent('li').remove();
+      })
+      $('.receiver_wrap').on('click', function () {
+        var parentUl = $(this).find('ul').children().length;
+        if (parentUl < 1) {
+          $(this).find('ul').remove();
+        }
+      })
+
+      // textarea byte 계산
+      function fn_checkByte(obj) {
+        const maxByte = 90; //최대 90바이트
+        const text_val = obj.value; //입력한 문자
+        const text_len = text_val.length; //입력한 문자수
+        let totalByte = 0;
+        for (let i = 0; i < text_len; i++) {
+          const each_char = text_val.charAt(i);
+          const uni_char = escape(each_char) //유니코드 형식으로 변환
+          if (uni_char.length > 4) {
+            // 한글 : 2Byte
+            totalByte += 2;
+          } else {
+            // 영문,숫자,특수문자 : 1Byte
+            totalByte += 1;
+          }
+        }
+        if (totalByte > maxByte) {
+          document.querySelector('.byte_alert').className = 'byte_alert lms';
+          document.getElementById("nowByte").innerText = totalByte;
+          document.getElementById("nowByte").style.color = "red";
+        } else {
+          document.querySelector('.byte_alert').className = 'byte_alert';
+          document.getElementById("nowByte").innerText = totalByte;
+          document.getElementById("nowByte").style.color = "#3c7ed3";
+        }
+      }
+    </script>
   </div>
   <!-- // Contents -->
 </body>
