@@ -62,6 +62,143 @@
         </section>
       </div>
     </div>
+
+    <!-- 내용 보기 -->
+    <div class="pop_overlay p_record01_1">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>문자 내용보기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="text_sample">
+            <table>
+              <caption>문자 내용 보기</caption>
+              <tr>
+                <th>문자 내용</th>
+                <td>안녕하세요<br>문자 내용입니다.</td>
+              </tr>
+              <tr>
+                <th>수신자 수</th>
+                <td>100</td>
+              </tr>
+              <tr>
+                <th>사용 크레딧</th>
+                <td>2,000</td>
+              </tr>
+            </table>
+          </div>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- // 내용 보기 -->
+    
+    <!-- 수신자 보기 -->
+    <div class="pop_overlay p_record01_2">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>수신자 보기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div style="margin-bottom: 10px;" class="alignR">
+            <button type="button" class="btn_s btn_green">엑셀 다운로드</button>
+          </div>
+          <div class="box">
+            <div class="group_wrap flex_wrap f_sb">
+              <ul>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                  <i class="axi axi-close"></i>
+                </li>
+              </ul>
+            </div>
+            <p>총 연락처 수 : <span>10</span>명</p>
+          </div>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 수신자 삭제
+  $('.axi-close').on('click', function () {
+    $(this).parent('li').remove();
+  })
+  $('.receiver_wrap').on('click', function () {
+    var parentUl = $(this).find('ul').children().length;
+    if (parentUl < 1) {
+      $(this).find('ul').remove();
+    }
+  })
+</script>
+    <!-- // 수신자 보기 -->
+
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -111,12 +248,12 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "보기", "t10": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "보기", "t10": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "보기", "t10": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "보기", "t10": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "보기", "t10": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "보기", "t10": "보기" }
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -150,18 +287,31 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-  function detail(cellValue, options, rowdata, action) {
+    function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
-      case "보기":
-        txt = "dtl";
+      case "수신자보기":
+        txt = "recipient";
+        break;
+      case "내용보기":
+        txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
     }
-    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  $('.btn_contents').on('click', function () {
+    $('.p_record01_1').show();
+  })
+  $('.btn_recipient').on('click', function () {
+    $('.p_record01_2').show();
+  })
 </script>
 
 </html>

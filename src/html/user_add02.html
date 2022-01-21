@@ -45,6 +45,10 @@
         </section>
       </div>
     </div>
+    <!-- 크레딧 결제 상세내역 보기 -->
+    @@include('inc/p_add.html')
+    <!-- // 크레딧 결제 상세내역 보기 -->
+    
     @@include('inc/header.html')
   </div>
   <!-- // Contents -->
@@ -52,12 +56,12 @@
 
 <script>
     var mydata = [
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"},
-      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "보기"}
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "크레딧결제상세내역보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "크레딧결제상세내역보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "크레딧결제상세내역보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "크레딧결제상세내역보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "크레딧결제상세내역보기"},
+      { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "암호화폐", "t4": "대기", "t5": "크레딧결제상세내역보기"}
     ];
     $("#jqGrid").jqGrid({
       data: mydata,
@@ -85,18 +89,31 @@
     });
 
     
-function detail(cellValue, options, rowdata, action) {
-  var html, txt = "";
-  switch (cellValue) {
-    case "보기":
-      txt = "dtl";
-      break;
-    default:
-      txt = "none";
+  function detail(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "수신자보기":
+        txt = "recipient";
+        break;
+      case "내용보기":
+        txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
+        break;
+      case "크레딧결제상세내역보기":
+        txt = "contents";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
+    return html;
   }
-  html = '<button type="button" class="axi btn_' + txt + '"></button>';
-  return html;
-}
+
+  $('.btn_p_send01_3').on('click', function () {
+        $('.p_add').show();
+      })
 </script>
 
 </html>

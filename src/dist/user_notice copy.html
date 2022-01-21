@@ -1,4 +1,33 @@
-@@include('inc/top.html')
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruce</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css">
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
+  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.full.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../plugins/echarts/dist/echarts.min.js"></script>
+  <script src="../js/file_attach.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
 
 <body>
   <!-- Contents -->
@@ -7,10 +36,10 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="#">게시판</a></li>
+            <li>공지사항</li>
           </ul>
         </div>
-        <h2 class="tit_h2">게시판</h2>
+        <h2 class="tit_h2">공지사항</h2>
       </div>
       <div class="wrap">
         <section>
@@ -211,7 +240,60 @@
         </section>
       </div>
     </div>
-    @@include('inc/header.html')
+    <div class="slide_wrap">
+  <div class="slide">
+    <div class="flex_wrap f_sb util_user">
+      <p><b>홍길동</b>님</p>
+      <p><i class="axi axi-money"></i><span>1,000</span></p>
+    </div>
+    <ul id="gnb">
+      <li>
+        <a href="user_send.html" class="depth1 empty">문자 보내기</a>
+      </li>
+      <li>
+        <a href="user_record01_1.html" class="depth1 on active">전송 내역</a>
+        <ul class="depth2">
+          <li><a href="user_record01_1.html" class="on">문자 전송 내역</a></li>
+          <li><a href="user_record02.html">문자 예약 내역</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="user_group.html" class="depth1 empty">그룹</a>
+      </li>
+      <li>
+        <a href="user_add01.html" class="depth1 new">충전소</a>
+        <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
+        <ul class="depth2">
+          <li><a href="user_add01.html">충전하기</a></li>
+          <li><a href="user_add02.html">충전 내역</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="user_info.html" class="depth1 empty">내 정보</a>
+      </li>
+      <li>
+        <a href="user_board01.html" class="depth1 empty">게시판</a>
+      </li>
+      <li>
+        <a href="user_notice.html" class="depth1 empty">공지사항</a>
+      </li>
+    </ul>
+  </div>
+  <div class="logout alignC">
+    <button type="button" class="btn_m btn_green">로그아웃</button>
+  </div>
+  <div class="fix_wrap">
+    <button type="button" class="btn_open"></button>
+    <button type="button" class="btn_change">Admin 전환</button>
+  </div>
+</div>
+
+<script>
+  // slide menu button
+  $('.btn_open').on('click', function () {
+    $('.slide_wrap').toggleClass('on');
+  })
+</script>
   </div>
   <!-- // Contents -->
 </body>

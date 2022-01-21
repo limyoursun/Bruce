@@ -19,7 +19,7 @@
             <div class="tbl_tit">
               <h3 class="tit_h3">결제 관리 목록</h3>
               <div class="flex_wrap f_sb" style="margin:20px 0 10px;">
-                <button type="button" class="btn_s btn_red">삭제</button>
+                <button type="button" class="btn_s btn_red btn_groupDel">삭제</button>
                 <button type="button" class="btn_s btn_blue">추가</button>
               </div>
             </div>
@@ -31,6 +31,15 @@
         </section>
       </div>
     </div>
+
+        <!-- 상세 내역 -->
+    @@include('inc/p_record01_1.html')
+    <!-- // 상세 내역 -->
+    
+    <!-- 그룹 삭제 -->
+    @@include('inc/p_payment.html')
+    <!-- // 그룹 삭제 -->
+
     @@include('inc/admin_header.html')
   </div>
   <!-- // Contents -->
@@ -67,18 +76,32 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-  function detail(cellValue, options, rowdata, action) {
+    function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
-      case "보기":
-        txt = "dtl";
+      case "수신자보기":
+        txt = "recipient";
+        break;
+      case "내용보기":
+        txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
     }
-    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+    $('.btn_groupDel').on('click', function () {
+    $('.p_payment').show();
+  })
+
+    $('.btn_contents').on('click', function () {
+    //$('.p_record01_1').show();
+  })
 </script>
 
 </html>

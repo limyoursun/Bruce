@@ -85,9 +85,17 @@ function addFileList(fIndex, fName, fSize, fExt){
   fSize = Math.floor(fSize*100)/100;
 
   html += "<li id='fileTr_" + fIndex + "'>";
-  html += "<a href='#' onclick='deleteFile(" + fIndex + "); return false;' class='btn_bbs btn_del' title='삭제'>삭제</a>";
+
+
+
+
   html += "<i class='ico_ext ext_" + fExt + "'></i>";
   html += fName + "<span class='file_size'>" + fSize + fUnit + "</span>";
+  html += "<a href='#' onclick='deleteFile(" + fIndex + "); return false;' class='btn_bbs btn_del' title='삭제'>삭제</a>";
+
+
+
+
   html += "</li>";
   viewList.append(html);
   infoView();

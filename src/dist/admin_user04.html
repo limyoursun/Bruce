@@ -82,6 +82,89 @@
         </section>
       </div>
     </div>
+
+    <!-- 연락처 보기 -->
+    <div class="pop_overlay p_group01_1">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>연락처 보기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="box">
+            <div class="group_wrap flex_wrap f_sb">
+              <ul>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+                <li>
+                  <span>+821234567891</span>
+                </li>
+              </ul>
+            </div>
+            <p>총 연락처 수 : <span>10</span>명</p>
+          </div>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 수신자 삭제
+  $('.axi-close').on('click', function () {
+    $(this).parent('li').remove();
+  })
+  $('.receiver_wrap').on('click', function () {
+    var parentUl = $(this).find('ul').children().length;
+    if (parentUl < 1) {
+      $(this).find('ul').remove();
+    }
+  })
+</script>
+    <!-- // 연락처 보기 -->
+
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -131,13 +214,13 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" }
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -166,19 +249,29 @@
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
-
-  function detail(cellValue, options, rowdata, action) {
+  
+    function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
-      case "보기":
-        txt = "dtl";
+      case "수신자보기":
+        txt = "recipient";
+        break;
+      case "내용보기":
+        txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
     }
-    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  $('.btn_address').on('click', function () {
+    $('.p_group01_1').show();
+  })
 </script>
 
 </html>

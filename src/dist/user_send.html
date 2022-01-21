@@ -309,16 +309,22 @@
     jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-  function detail(cellValue, options, rowdata, action) {
+   function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
-      case "보기":
-        txt = "dtl";
+      case "수신자보기":
+        txt = "recipient";
+        break;
+      case "내용보기":
+        txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
     }
-    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
 </script>
@@ -391,7 +397,7 @@
         </ul>
       </li>
       <li>
-        <a href="#" class="depth1 empty">내 정보</a>
+        <a href="user_info.html" class="depth1 empty">내 정보</a>
       </li>
       <li>
         <a href="user_board01.html" class="depth1 empty">게시판</a>

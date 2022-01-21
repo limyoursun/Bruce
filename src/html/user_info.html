@@ -35,7 +35,7 @@
               </tr>
             </table>
             <div style="margin-top:10px;">
-              <button type="button" class="btn_s btn_gray">비밀번호 변경</button>
+              <button type="button" class="btn_s btn_gray btn_changePw">비밀번호 변경</button>
               <button type="button" class="btn_s btn_gray">로그아웃</button>
             </div>
           </div>
@@ -44,6 +44,12 @@
     </div>
 
     @@include('inc/header.html')
+
+    <!-- 비밀번호 변경 -->
+    @@include('inc/p_info.html')
+    <!-- // 비밀번호 변경 -->
+
+
   </div>
 
   <script>
@@ -67,6 +73,11 @@
       if (parentUl < 1) {
         $(this).find('ul').remove();
       }
+    })
+
+    //  
+    $('.btn_changePw').on('click', function () {
+      $('.p_info').show();
     })
   </script>
   <!-- // Contents -->

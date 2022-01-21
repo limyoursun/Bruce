@@ -18,15 +18,15 @@
         </ul>
       </div>
       <div class="wrap">
-      
+
         <section>
           <div class="table_wrap">
             <div class="tbl_top alignR" style="margin-bottom:10px;">
-                <h3 class="tit_h3">예약 내역 목록</h3>
-                <div>
+              <h3 class="tit_h3">예약 내역 목록</h3>
+              <div>
                 <button type="button" class="btn_s btn_red">예약 삭제</button>
-                </div>
               </div>
+            </div>
             <div class="tbl_wrap row_5">
               <table id="jqGrid" class="jq-grid"></table>
               <div id="jqGridPager"></div>
@@ -47,15 +47,15 @@
         </section>
       </div>
     </div>
-    
+
     <!-- 내용 보기 -->
     @@include('inc/p_record01_1.html')
     <!-- // 내용 보기 -->
-    
+
     <!-- 수신자 보기 -->
     @@include('inc/p_record01_2.html')
     <!-- // 수신자 보기 -->
-    
+
     @@include('inc/header.html')
   </div>
   <!-- // Contents -->
@@ -107,6 +107,9 @@
         break;
       case "내용보기":
         txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
@@ -167,6 +170,9 @@
         break;
       case "내용보기":
         txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";

@@ -1,4 +1,4 @@
-<div class="pop_overlay p_group01_1">
+<div class="pop_overlay p_info">
   <div class="pop_area">
     <div class="pop_wrap">
       <div class="pop_tit">
@@ -7,73 +7,45 @@
       </div>
       <div class="pop_body">
         <div class="pop_cont">
-          <table>
-            <colgroup>
-              <col width="30%">
-              <col width="70%">
-            </colgroup>
+          <table class="tbl_info">
             <tr>
               <th><label for="join_id">아이디</label></th>
               <td><input type="text" id="join_id"></td>
             </tr>
             <tr>
-              <th><label for="join_pw">비밀번호</label></th>
+              <th><label for="join_pw">현재 비밀번호</label></th>
+              <td>
+                <input type="password" id="join_pw">
+              </td>
+            </tr>
+            <tr>
+              <th><label for="join_pw">새 비밀번호</label></th>
               <td>
                 <input type="password" id="join_pw">
                 <p class="join_alert font_gray">비밀번호는 8자 이상의 문자, 숫자, 특수문자를 사용하세요</p>
               </td>
             </tr>
             <tr>
-              <th><label for="join_pw2">비밀번호 확인</label></th>
+              <th><label for="join_pw2">새 비밀번호 확인</label></th>
               <td>
                 <input type="password" id="join_pw2">
                 <p class="join_alert font_gray">비밀번호가 일치하지 않습니다</p>
               </td>
             </tr>
             <tr>
-              <th><label for="join_name">성명</label></th>
-              <td><input type="text" id="join_name"></td>
-            </tr>
-            <tr>
-              <th rowspan="2"><label for="join_number">전화번호</label></th>
+              <th></th>
               <td>
                 <span class="flex_wrap">
-                  <input type="text" id="join_number">
-                  <button type="button" class="btn_s btn_number">인증</button>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="flex_wrap">
-                  <input type="text" id="join_number" placeholder="인증번호 입력 (저~는 disabled design입니다)" disabled>
-                  <button type="button" class="btn_s btn_number">확인</button>
+                  <button type="button" class="btn_s btn_gray">인증</button>
+                  <input type="text" style="width: auto;" id="join_number" class="join_number" placeholder="인증번호 입력 (저~는 disabled design입니다)" disabled="">
                 </span>
                 <p class="join_alert font_red">인증번호 유효시간 : <span>N</span>분 <span>N</span>초</p>
                 <p class="join_alert font_gray">인증번호가 일치하지 않습니다</p>
               </td>
             </tr>
-            <tr>
-              <th><label for="join_email">이메일</label></th>
-              <td><input type="text" id="join_email"></td>
-            </tr>
-            <tr>
-              <th><label for="join_birth">생년월일</label></th>
-              <td>
-                <span class="flex_wrap f_sb">
-                  <input type="text" id="join_birth" placeholder="년(4자)">
-                  <select name="year" id="join_month">
-                    <option value="월">월</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  <input type="text" id="join_day" placeholder="일">
-                </span>
-              </td>
-            </tr>
           </table>
           <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_green">변경</button>
             <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
           </div>
         </div>

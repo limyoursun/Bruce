@@ -122,6 +122,9 @@
       </div>
       <div class="pop_body">
         <div class="pop_cont">
+          <div style="margin-bottom: 10px;" class="alignR">
+            <button type="button" class="btn_s btn_green">엑셀 다운로드</button>
+          </div>
           <div class="box">
             <div class="group_wrap flex_wrap f_sb">
               <ul>
@@ -237,7 +240,7 @@
         </ul>
       </li>
       <li>
-        <a href="#" class="depth1 empty">내 정보</a>
+        <a href="user_info.html" class="depth1 empty">내 정보</a>
       </li>
       <li>
         <a href="user_board01.html" class="depth1 empty">게시판</a>
@@ -324,6 +327,9 @@
         break;
       case "내용보기":
         txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";

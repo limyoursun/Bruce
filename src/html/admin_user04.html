@@ -53,6 +53,11 @@
         </section>
       </div>
     </div>
+
+    <!-- 연락처 보기 -->
+    @@include('inc/p_group01_1.html')
+    <!-- // 연락처 보기 -->
+
     @@include('inc/admin_header.html')
   </div>
   <!-- // Contents -->
@@ -61,13 +66,13 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" },
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "보기" }
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "그룹1", "t4": "100", "t5": "사용", "t6": "연락처보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -96,19 +101,29 @@
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
-
-  function detail(cellValue, options, rowdata, action) {
+  
+    function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
-      case "보기":
-        txt = "dtl";
+      case "수신자보기":
+        txt = "recipient";
+        break;
+      case "내용보기":
+        txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
     }
-    html = '<button type="button" class="axi btn_' + txt + '"></button>';
+    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  $('.btn_address').on('click', function () {
+    $('.p_group01_1').show();
+  })
 </script>
 
 </html>

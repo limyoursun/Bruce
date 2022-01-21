@@ -47,15 +47,15 @@
         </ul>
       </div>
       <div class="wrap">
-      
+
         <section>
           <div class="table_wrap">
             <div class="tbl_top alignR" style="margin-bottom:10px;">
-                <h3 class="tit_h3">예약 내역 목록</h3>
-                <div>
+              <h3 class="tit_h3">예약 내역 목록</h3>
+              <div>
                 <button type="button" class="btn_s btn_red">예약 삭제</button>
-                </div>
               </div>
+            </div>
             <div class="tbl_wrap row_5">
               <table id="jqGrid" class="jq-grid"></table>
               <div id="jqGridPager"></div>
@@ -76,7 +76,7 @@
         </section>
       </div>
     </div>
-    
+
     <!-- 내용 보기 -->
     <div class="pop_overlay p_record01_1">
   <div class="pop_area">
@@ -113,7 +113,7 @@
   </div>
 </div>
     <!-- // 내용 보기 -->
-    
+
     <!-- 수신자 보기 -->
     <div class="pop_overlay p_record01_2">
   <div class="pop_area">
@@ -124,6 +124,9 @@
       </div>
       <div class="pop_body">
         <div class="pop_cont">
+          <div style="margin-bottom: 10px;" class="alignR">
+            <button type="button" class="btn_s btn_green">엑셀 다운로드</button>
+          </div>
           <div class="box">
             <div class="group_wrap flex_wrap f_sb">
               <ul>
@@ -209,7 +212,7 @@
   })
 </script>
     <!-- // 수신자 보기 -->
-    
+
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -239,7 +242,7 @@
         </ul>
       </li>
       <li>
-        <a href="#" class="depth1 empty">내 정보</a>
+        <a href="user_info.html" class="depth1 empty">내 정보</a>
       </li>
       <li>
         <a href="user_board01.html" class="depth1 empty">게시판</a>
@@ -315,6 +318,9 @@
       case "내용보기":
         txt = "contents";
         break;
+      case "연락처보기":
+        txt = "address";
+        break;
       default:
         txt = "none";
     }
@@ -374,6 +380,9 @@
         break;
       case "내용보기":
         txt = "contents";
+        break;
+      case "연락처보기":
+        txt = "address";
         break;
       default:
         txt = "none";
