@@ -62,11 +62,12 @@
       </div>
     </div>
 
-    <!-- 상세 내역 -->
-    @@include('inc/p_record01_1.html')
-    <!-- // 상세 내역 -->
+    <!-- 크레딧 결제 상세내역 보기 -->
+    @@include('inc/p_user03.html')
+    <!-- // 크레딧 결제 상세내역 보기 -->
 
     @@include('inc/admin_header.html')
+    @@include('inc/toast.html')
   </div>
   <!-- // Contents -->
 </body>
@@ -132,7 +133,7 @@
   }
 
   $('.btn_contents').on('click', function () {
-    //$('.p_record01_1').show();
+    $('.p_user03').show();
   })
 </script>
 

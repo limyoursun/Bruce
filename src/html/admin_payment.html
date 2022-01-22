@@ -20,7 +20,7 @@
               <h3 class="tit_h3">결제 관리 목록</h3>
               <div class="flex_wrap f_sb" style="margin:20px 0 10px;">
                 <button type="button" class="btn_s btn_red btn_groupDel">삭제</button>
-                <button type="button" class="btn_s btn_blue">추가</button>
+                <button type="button" class="btn_s btn_blue btn_groupAdd">추가</button>
               </div>
             </div>
             <div class="tbl_wrap">
@@ -32,15 +32,20 @@
       </div>
     </div>
 
-        <!-- 상세 내역 -->
-    @@include('inc/p_record01_1.html')
-    <!-- // 상세 내역 -->
-    
     <!-- 그룹 삭제 -->
-    @@include('inc/p_payment.html')
+    @@include('inc/p_payment_1.html')
     <!-- // 그룹 삭제 -->
 
+    <!-- 결제 시스템 상세보기 -->
+    @@include('inc/p_payment_2.html')
+    <!-- // 결제 시스템 상세보기 -->
+
+    <!-- 결제 시스템 추가하기 -->
+    @@include('inc/p_payment_3.html')
+    <!-- // 결제 시스템 추가하기 -->
+
     @@include('inc/admin_header.html')
+    @@include('inc/toast.html')
   </div>
   <!-- // Contents -->
 </body>
@@ -48,7 +53,7 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "암호화폐", "t4": "보기" }
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "암호화폐", "t4": "내용보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -57,7 +62,7 @@
       { label: '아이디', name: 't1', align: 'center' },
       { label: '생성 일자', name: 't2', align: 'center' },
       { label: '결제 시스템명', name: 't3', align: 'center' },
-      { label: '상세보기', name: 't4', align: 'center', formatter: detail}
+      { label: '상세보기', name: 't4', align: 'center', formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
@@ -68,7 +73,7 @@
     autowidth: true,
     shrinkToFit: false,
     multiselect: true,
-    height:400
+    height: 400
   });
 
   // 창 크기 변경 시, 너비 자동 조절
@@ -76,7 +81,7 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-    function detail(cellValue, options, rowdata, action) {
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":
@@ -95,12 +100,16 @@
     return html;
   }
 
-    $('.btn_groupDel').on('click', function () {
-    $('.p_payment').show();
+  $('.btn_groupDel').on('click', function () {
+    $('.p_payment_1').show();
   })
 
-    $('.btn_contents').on('click', function () {
-    //$('.p_record01_1').show();
+  $('.btn_contents').on('click', function () {
+    $('.p_payment_2').show();
+  })
+
+  $('.btn_groupAdd').on('click', function () {
+    $('.p_payment_3').show();
   })
 </script>
 

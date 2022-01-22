@@ -49,7 +49,7 @@
               <h3 class="tit_h3">결제 관리 목록</h3>
               <div class="flex_wrap f_sb" style="margin:20px 0 10px;">
                 <button type="button" class="btn_s btn_red btn_groupDel">삭제</button>
-                <button type="button" class="btn_s btn_blue">추가</button>
+                <button type="button" class="btn_s btn_blue btn_groupAdd">추가</button>
               </div>
             </div>
             <div class="tbl_wrap">
@@ -61,45 +61,8 @@
       </div>
     </div>
 
-        <!-- 상세 내역 -->
-    <div class="pop_overlay p_record01_1">
-  <div class="pop_area">
-    <div class="pop_wrap">
-      <div class="pop_tit">
-        <h1>문자 내용보기</h1>
-        <button type="button" class="btn_pop_close"></button>
-      </div>
-      <div class="pop_body">
-        <div class="pop_cont">
-          <div class="text_sample">
-            <table>
-              <caption>문자 내용 보기</caption>
-              <tr>
-                <th>문자 내용</th>
-                <td>안녕하세요<br>문자 내용입니다.</td>
-              </tr>
-              <tr>
-                <th>수신자 수</th>
-                <td>100</td>
-              </tr>
-              <tr>
-                <th>사용 크레딧</th>
-                <td>2,000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="btn_wrap alignC">
-            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    <!-- // 상세 내역 -->
-    
     <!-- 그룹 삭제 -->
-    <div class="pop_overlay p_payment">
+    <div class="pop_overlay p_payment_1">
   <div class="pop_area">
     <div class="pop_wrap">
       <div class="pop_tit">
@@ -122,6 +85,115 @@
   </div>
 </div>
     <!-- // 그룹 삭제 -->
+
+    <!-- 결제 시스템 상세보기 -->
+    <div class="pop_overlay p_payment_2">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>결제 시스템 상세보기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <div class="alignR" style="margin-bottom:10px;">
+            <button type="button" class="btn_s btn_blue">수정</button>
+          </div>
+          <table class="tbl_blackTop">
+            <caption>크레딧 결제 수단</caption>
+            <colgroup>
+              <col width="30%">
+              <col width="70%">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th><label for="credit_name">결제 시스템명</label></th>
+                <td><span>암호화폐</span></td>
+              </tr>
+              <tr>
+                <th><label for="credit_name">결제 시스템명</label></th>
+                <td><input type="text" class="input_title" id="credit_name"></td>
+              </tr>
+              <tr>
+                <th><label for="credit_contents">내용</label></th>
+                <td>
+                  <div class="description_box">
+                    비트코인 입금주소 – XXXXXXXXX<br>
+                    이더리움 입금주소 – XXXXXXXXX<br><br>
+                    반드시 송금 완료 후 충전 신청을 해주시기 바랍니다.
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="credit_contents">내용</label></th>
+                <td>
+                  <textarea name="text_example" class="text_example"></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- // 결제 시스템 상세보기 -->
+
+    <!-- 결제 시스템 추가하기 -->
+    <div class="pop_overlay p_payment_3">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>결제 시스템 추가하기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <table class="tbl_blackTop">
+            <caption>크레딧 결제 수단</caption>
+            <colgroup>
+              <col width="30%">
+              <col width="70%">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th><label for="credit_name">결제 시스템명</label></th>
+                <td><span>암호화폐</span></td>
+              </tr>
+              <tr>
+                <th><label for="credit_name">결제 시스템명</label></th>
+                <td><input type="text" class="input_title" id="credit_name"></td>
+              </tr>
+              <tr>
+                <th><label for="credit_contents">내용</label></th>
+                <td>
+                  <div class="description_box">
+                    비트코인 입금주소 – XXXXXXXXX<br>
+                    이더리움 입금주소 – XXXXXXXXX<br><br>
+                    반드시 송금 완료 후 충전 신청을 해주시기 바랍니다.
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="credit_contents">내용</label></th>
+                <td>
+                  <textarea name="text_example" class="text_example"></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- // 결제 시스템 추가하기 -->
 
     <div class="slide_wrap">
   <div class="slide">
@@ -152,11 +224,11 @@
     </ul>
   </div>
   <div class="logout alignC">
+    <button type="button" class="btn_m btn_skyblue" onclick="location.href='user_send.html'">User 전환</button>
     <button type="button" class="btn_m btn_green">로그아웃</button>
   </div>
   <div class="fix_wrap">
     <button type="button" class="btn_open"></button>
-    <button type="button" class="btn_change">Admin 전환</button>
   </div>
 </div>
 
@@ -165,6 +237,33 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+    <div class="toast_alarm">
+  <ul>
+    <li class="flex_wrap f_sb">
+      <div class="flex_wrap">
+        <i class="axi axi-add-box"></i>
+        <div>
+          <span>[충전신청]</span>
+          <span>새로운 충전신청이 있습니다</span>
+          <!-- 아이디와 금액을 표기하실 때 사용하세요
+          <p>
+            <span>아이디 : </span>
+            <span>user01</span>
+          </p>
+          <p>
+            <span>금&nbsp;&nbsp;&nbsp;액 : </span>
+            <span>1,000</span>
+          </p> -->
+        </div>
+      </div>
+      <div>
+        <button type="button">
+          <i class="axi axi-close"></i>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
   </div>
   <!-- // Contents -->
 </body>
@@ -172,7 +271,7 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "암호화폐", "t4": "보기" }
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "암호화폐", "t4": "내용보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -181,7 +280,7 @@
       { label: '아이디', name: 't1', align: 'center' },
       { label: '생성 일자', name: 't2', align: 'center' },
       { label: '결제 시스템명', name: 't3', align: 'center' },
-      { label: '상세보기', name: 't4', align: 'center', formatter: detail}
+      { label: '상세보기', name: 't4', align: 'center', formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
@@ -192,7 +291,7 @@
     autowidth: true,
     shrinkToFit: false,
     multiselect: true,
-    height:400
+    height: 400
   });
 
   // 창 크기 변경 시, 너비 자동 조절
@@ -200,7 +299,7 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-    function detail(cellValue, options, rowdata, action) {
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":
@@ -219,12 +318,16 @@
     return html;
   }
 
-    $('.btn_groupDel').on('click', function () {
-    $('.p_payment').show();
+  $('.btn_groupDel').on('click', function () {
+    $('.p_payment_1').show();
   })
 
-    $('.btn_contents').on('click', function () {
-    //$('.p_record01_1').show();
+  $('.btn_contents').on('click', function () {
+    $('.p_payment_2').show();
+  })
+
+  $('.btn_groupAdd').on('click', function () {
+    $('.p_payment_3').show();
   })
 </script>
 

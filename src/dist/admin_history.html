@@ -120,11 +120,11 @@
     </ul>
   </div>
   <div class="logout alignC">
+    <button type="button" class="btn_m btn_skyblue" onclick="location.href='user_send.html'">User 전환</button>
     <button type="button" class="btn_m btn_green">로그아웃</button>
   </div>
   <div class="fix_wrap">
     <button type="button" class="btn_open"></button>
-    <button type="button" class="btn_change">Admin 전환</button>
   </div>
 </div>
 
@@ -133,6 +133,33 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+    <div class="toast_alarm">
+  <ul>
+    <li class="flex_wrap f_sb">
+      <div class="flex_wrap">
+        <i class="axi axi-add-box"></i>
+        <div>
+          <span>[충전신청]</span>
+          <span>새로운 충전신청이 있습니다</span>
+          <!-- 아이디와 금액을 표기하실 때 사용하세요
+          <p>
+            <span>아이디 : </span>
+            <span>user01</span>
+          </p>
+          <p>
+            <span>금&nbsp;&nbsp;&nbsp;액 : </span>
+            <span>1,000</span>
+          </p> -->
+        </div>
+      </div>
+      <div>
+        <button type="button">
+          <i class="axi axi-close"></i>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
   </div>
   <!-- // Contents -->
 </body>
