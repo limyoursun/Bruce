@@ -58,8 +58,8 @@ section{margin-top:30px;}
 /* info */
 .tbl_info th{width:75px;padding:5px 10px 0 5px;font-weight:bold;vertical-align:top;}
 .tbl_info td{padding:5px 0;}
-.tbl_info td input{min-width:100%;}
-.tbl_info th label{display:block;min-width:95px;}
+.tbl_info td input{width:100%;}
+.tbl_changePw th span{display:block;min-width:95px;}
 /* board */
 .manual_attach #dropZone{padding:10px 0 10px 10px;background-color:#e8e8e8;text-align:left;}
 .manual_attach li{line-height:35px;}
@@ -91,6 +91,11 @@ section{margin-top:30px;}
 .toast_alarm li{padding:5px 5px 5px 10px;}
 .toast_alarm li>div>div{margin-right:10px;}
 .toast_alarm{top:50px;right:10px;}
+.search_area{padding:8px;}
+.search li{margin-right:0;}
+.search li label{margin: 0;}
+.period_multi{min-width:222px;}
+.period_multi input{font-size:12px;}
 
 /* pop */
 .pop_wrap{position:fixed;min-width:80%;}

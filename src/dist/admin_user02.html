@@ -64,7 +64,7 @@
     </div>
 
     <!-- 내용 보기 -->
-    <div class="pop_overlay p_record01_1">
+    <div class="pop_overlay p_user02_1">
   <div class="pop_area">
     <div class="pop_wrap">
       <div class="pop_tit">
@@ -101,7 +101,7 @@
     <!-- // 내용 보기 -->
     
     <!-- 수신자 보기 -->
-    <div class="pop_overlay p_record01_2">
+    <div class="pop_overlay p_user02_2">
   <div class="pop_area">
     <div class="pop_wrap">
       <div class="pop_tit">
@@ -110,6 +110,9 @@
       </div>
       <div class="pop_body">
         <div class="pop_cont">
+          <div style="margin-bottom:10px" class="alignR">
+            <button type="button" class="btn_s btn_green">엑셀 다운로드</button>
+          </div>
           <div class="box">
             <div class="group_wrap flex_wrap f_sb">
               <ul>
@@ -264,7 +267,7 @@
     rowNum: 10
   });
 
-  // 창 크기 변경 시, 너비 자동 조절
+  // jqGrid : 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
@@ -289,10 +292,10 @@
   }
 
   $('.btn_contents').on('click', function () {
-    $('.p_record01_1').show();
+    $('.p_user02_1').show();
   })
   $('.btn_recipient').on('click', function () {
-    $('.p_record01_2').show();
+    $('.p_user02_2').show();
   })
 </script>
 

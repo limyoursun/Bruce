@@ -76,8 +76,8 @@
             <br>삭제 후 복구는 불가능합니다.
           </p>
           <div class="btn_wrap alignC">
-            <button type="button" class="btn_cancel btn_s btn_blue">삭제</button>
-            <button type="button" class="btn_cancel btn_s btn_red">취소</button>
+            <button type="button" class="btn_cancel btn_s btn_red">삭제</button>
+            <button type="button" class="btn_cancel btn_s btn_gray">취소</button>
           </div>
         </div>
       </div>
@@ -107,15 +107,15 @@
             </colgroup>
             <tbody>
               <tr>
-                <th><label for="credit_name">결제 시스템명</label></th>
+                <th><span>결제 시스템명</span></label></th>
                 <td><span>암호화폐</span></td>
               </tr>
               <tr>
-                <th><label for="credit_name">결제 시스템명</label></th>
-                <td><input type="text" class="input_title" id="credit_name"></td>
+                <th><span>결제 시스템명</span></label></th>
+                <td><input type="text" class="input_title" title="credit_name"></td>
               </tr>
               <tr>
-                <th><label for="credit_contents">내용</label></th>
+                <th><span>내용</span></th>
                 <td>
                   <div class="description_box">
                     비트코인 입금주소 – XXXXXXXXX<br>
@@ -125,9 +125,9 @@
                 </td>
               </tr>
               <tr>
-                <th><label for="credit_contents">내용</label></th>
+                <th><span>내용</span></th>
                 <td>
-                  <textarea name="text_example" class="text_example"></textarea>
+                  <textarea title="text_example" class="text_example"></textarea>
                 </td>
               </tr>
             </tbody>
@@ -160,15 +160,15 @@
             </colgroup>
             <tbody>
               <tr>
-                <th><label for="credit_name">결제 시스템명</label></th>
+                <th><span>결제 시스템명</span></label></th>
                 <td><span>암호화폐</span></td>
               </tr>
               <tr>
-                <th><label for="credit_name">결제 시스템명</label></th>
-                <td><input type="text" class="input_title" id="credit_name"></td>
+                <th><span>결제 시스템명</span></label></th>
+                <td><input type="text" class="input_title" title="credit_name"></td>
               </tr>
               <tr>
-                <th><label for="credit_contents">내용</label></th>
+                <th><span>내용</span></th>
                 <td>
                   <div class="description_box">
                     비트코인 입금주소 – XXXXXXXXX<br>
@@ -178,9 +178,9 @@
                 </td>
               </tr>
               <tr>
-                <th><label for="credit_contents">내용</label></th>
+                <th><span>내용</span></th>
                 <td>
-                  <textarea name="text_example" class="text_example"></textarea>
+                  <textarea title="text_example" class="text_example"></textarea>
                 </td>
               </tr>
             </tbody>
@@ -294,7 +294,7 @@
     height: 400
   });
 
-  // 창 크기 변경 시, 너비 자동 조절
+  // jqGrid : 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });

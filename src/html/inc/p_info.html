@@ -2,33 +2,34 @@
   <div class="pop_area">
     <div class="pop_wrap">
       <div class="pop_tit">
-        <h1>연락처 보기</h1>
+        <h1>비밀번호 변경</h1>
         <button type="button" class="btn_pop_close"></button>
       </div>
       <div class="pop_body">
         <div class="pop_cont">
-          <table class="tbl_info">
+          <table class="tbl_info tbl_changePw">
+            <caption>비밀번호 변경</caption>
             <tr>
-              <th><label for="join_id">아이디</label></th>
-              <td><input type="text" id="join_id"></td>
+              <th><span>아이디</span></th>
+              <td><input type="text" title="join_id"></td>
             </tr>
             <tr>
-              <th><label for="join_pw">현재 비밀번호</label></th>
+              <th><span>현재 비밀번호</span></th>
               <td>
-                <input type="password" id="join_pw">
+                <input type="password" title="join_pw">
               </td>
             </tr>
             <tr>
-              <th><label for="join_pw">새 비밀번호</label></th>
+              <th><span>새 비밀번호</span></th>
               <td>
-                <input type="password" id="join_pw">
+                <input type="password" title="join_pw">
                 <p class="join_alert font_gray">비밀번호는 8자 이상의 문자, 숫자, 특수문자를 사용하세요</p>
               </td>
             </tr>
             <tr>
-              <th><label for="join_pw2">새 비밀번호 확인</label></th>
+              <th><span>새 비밀번호 확인</span></th>
               <td>
-                <input type="password" id="join_pw2">
+                <input type="password" title="join_pw2">
                 <p class="join_alert font_gray">비밀번호가 일치하지 않습니다</p>
               </td>
             </tr>
@@ -37,7 +38,7 @@
               <td>
                 <span class="flex_wrap">
                   <button type="button" class="btn_s btn_gray">인증</button>
-                  <input type="text" style="width: auto;" id="join_number" class="join_number" placeholder="인증번호 입력 (저~는 disabled design입니다)" disabled="">
+                  <input type="text" style="width: calc(100% - 50px);" title="join_number" class="join_number" placeholder="인증번호 입력 (저~는 disabled design입니다)" disabled="">
                 </span>
                 <p class="join_alert font_red">인증번호 유효시간 : <span>N</span>분 <span>N</span>초</p>
                 <p class="join_alert font_gray">인증번호가 일치하지 않습니다</p>

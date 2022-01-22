@@ -54,16 +54,22 @@
             <div class="search_area">
               <ul class="search f_s">
                 <li>
-                  <label for="search_id">아이디</label>
-                  <input type="text" id="search_id">
+                  <label>
+                    <b>아이디</b>
+                    <input type="text" title="search_id">
+                  </label>
                 </li>
                 <li>
-                  <label for="search_name">고객명</label>
-                  <input type="text" id="search_name">
+                  <label>
+                    <b>고객명</b>
+                    <input type="text" title="search_name">
+                  </label>
                 </li>
                 <li>
-                  <label for="search_number">연락처</label>
-                  <input type="text" id="search_number">
+                  <label>
+                    <b>연락처</b>
+                    <input type="text" title="search_number">
+                  </label>
                 </li>
                 <li>
                   <button type="button" class="btn_s btn_blue">조회</button>
@@ -75,7 +81,7 @@
                 <div>
                   <dl>
                     <dt>
-                      <label for="id">아이디</label>
+                      <span><b>아이디</b></span>
                     </dt>
                     <dd>
                       <span>test111</span>
@@ -83,7 +89,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <label for="pw">비밀번호</label>
+                      <span><b>비밀번호</b></span>
                     </dt>
                     <dd>
                       <span>*********</span>
@@ -91,7 +97,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <label for="name">고객명</label>
+                      <span><b>고객명</b></span>
                     </dt>
                     <dd>
                       <span>김철수</span>
@@ -101,7 +107,7 @@
                 <div>
                   <dl>
                     <dt>
-                      <label for="number">연락처</label>
+                      <span><b>연락처</b></span>
                     </dt>
                     <dd>
                       <span>010-0000-0000</span>
@@ -109,7 +115,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <label for="credit1">보유 크레딧</label>
+                      <span><b>보유 크레딧</b></span>
                     </dt>
                     <dd>
                       <span>100,000</span>
@@ -117,7 +123,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <label for="credit2">충전 횟수</label>
+                      <span><b>충전 횟수</b></span>
                     </dt>
                     <dd>
                       <span>100,000</span>
@@ -125,7 +131,7 @@
                   </dl>
                   <dl>
                     <dt>
-                      <label for="credit2">충전 누적 금액</label>
+                      <span><b>충전 누적 금액</b></span>
                     </dt>
                     <dd>
                       <span>100,000</span>
@@ -133,38 +139,42 @@
                   </dl>
                   <dl>
                     <dt>
-                      <label for="latitude">충전상한</label>
+                      <span><b>충전상한</b></span>
                     </dt>
                     <dd>
-                      <input type="text" id="latitude" placeholder="최소">
-                      <input type="text" id="longitude" placeholder="최대">
+                      <input type="text" title="minimum" placeholder="최소">
+                      <input type="text" title="maximum" placeholder="최대">
                     </dd>
                   </dl>
                 </div>
                 <div>
                   <dl>
                     <dt>
-                      <label for="state">계정 상태</label>
+                      <span><b>계정 상태</b></span>
                     </dt>
                     <dd>
                       <ul class="flex_wrap">
                         <li class="flex_wrap">
-                          <input type="radio">
-                          <label for="">활성</label>
+                          <label>
+                            <input type="radio" name="account_state" title="activation">
+                            <span>활성</span>
+                          </label>
                         </li>
                         <li class="flex_wrap">
-                          <input type="radio">
-                          <label for="">비활성</label>
+                          <label>
+                            <input type="radio" name="account_state" title="deactivate">
+                            <span>비활성</span>
+                          </label>
                         </li>
                       </ul>
                     </dd>
                   </dl>
                   <dl>
                     <dt>
-                      <label for="requestinfo">비활성 사유</label>
+                      <span><b>비활성 사유</b></span>
                     </dt>
                     <dd class="flex_wrap f_sb">
-                      <input type="text" disabled>
+                      <input type="text" title="deactivate_reason">
                     </dd>
                   </dl>
                 </div>
@@ -382,7 +392,7 @@
     rowNum: 5
   });
 
-  // 창 크기 변경 시, 너비 자동 조절
+  // jqGrid : 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });

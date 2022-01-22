@@ -54,8 +54,10 @@
                 <h3 class="tit_h3">크레딧 충전</h3>
                 <div class="flex_wrap f_sb">
                   <div class="send_add">
-                    <label for="input_add">충전 금액 : </label>
-                    <input type="text" id="input_add" title="수신자 추가">
+                    <label>
+                      <b>충전 금액 : </b>
+                      <input type="text" title="add_amount">
+                    </label>
                   </div>
                 </div>
                 <div class="btn_wrap">
@@ -73,12 +75,16 @@
                 <h3 class="tit_h3">결제수단 선택</h3>
                 <ul class="add_way_wrap flex_wrap">
                   <li>
-                    <input type="radio" id="add_method1" name="add_way">
-                    <label for="add_method1">암호화폐</label>
+                    <label>
+                      <input type="radio" title="add_way1" name="add_way">
+                      <b>암호화폐</b>
+                    </label>
                   </li>
                   <li>
-                    <input type="radio" id="add_method2" name="add_way">
-                    <label for="add_method2">은행송금</label>
+                    <label>
+                      <input type="radio" title="add_way2" name="add_way">
+                      <b>은행송금</b>
+                    </label>
                   </li>
                 </ul>
                 <div class="add_method_box">
@@ -190,7 +196,7 @@
     shrinkToFit: false
   });
 
-  // 창 크기 변경 시, 너비 자동 조절
+  // jqGrid : 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
