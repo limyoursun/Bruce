@@ -33,13 +33,13 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="user_record01_1.html">전송내역</a></li>
+            <li><a href="#">전송내역</a></li>
             <li>문자 예약 내역</li>
           </ul>
         </div>
         <h2 class="tit_h2">문자 예약 내역</h2>
         <ul class="menu">
-          <li><a href="user_record01_1.html">문자 전송 내역</a></li>
+          <li><a href="user_record01.html">문자 전송 내역</a></li>
           <li class="on"><a href="user_record02.html">문자 예약 내역</a></li>
         </ul>
       </div>
@@ -76,150 +76,150 @@
 
     <!-- 내용 보기 -->
     <div class="pop_overlay p_record01_1">
-  <div class="pop_area">
-    <div class="pop_wrap">
-      <div class="pop_tit">
-        <h1>문자 내용보기</h1>
-        <button type="button" class="btn_pop_close"></button>
-      </div>
-      <div class="pop_body">
-        <div class="pop_cont">
-          <div class="text_sample">
-            <table>
-              <caption>문자 내용 보기</caption>
-              <tr>
-                <th>문자 내용</th>
-                <td>안녕하세요<br>문자 내용입니다.</td>
-              </tr>
-              <tr>
-                <th>수신자 수</th>
-                <td>100</td>
-              </tr>
-              <tr>
-                <th>사용 크레딧</th>
-                <td>2,000</td>
-              </tr>
-            </table>
+      <div class="pop_area">
+        <div class="pop_wrap">
+          <div class="pop_tit">
+            <h1>문자 내용보기</h1>
+            <button type="button" class="btn_pop_close"></button>
           </div>
-          <div class="btn_wrap alignC">
-            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          <div class="pop_body">
+            <div class="pop_cont">
+              <div class="text_sample">
+                <table>
+                  <caption>문자 내용 보기</caption>
+                  <tr>
+                    <th>문자 내용</th>
+                    <td>안녕하세요<br>문자 내용입니다.</td>
+                  </tr>
+                  <tr>
+                    <th>수신자 수</th>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th>사용 크레딧</th>
+                    <td>2,000</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="btn_wrap alignC">
+                <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
     <!-- // 내용 보기 -->
 
     <!-- 수신자 보기 -->
     <div class="pop_overlay p_record01_2">
-  <div class="pop_area">
-    <div class="pop_wrap">
-      <div class="pop_tit">
-        <h1>수신자 보기</h1>
-        <button type="button" class="btn_pop_close"></button>
-      </div>
-      <div class="pop_body">
-        <div class="pop_cont">
-          <div class="box">
-            <div class="group_wrap flex_wrap f_sb">
-              <ul>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-                <li><span>+821234567891</span></li>
-              </ul>
-            </div>
-            <p>총 연락처 수 : <span>10</span>명</p>
+      <div class="pop_area">
+        <div class="pop_wrap">
+          <div class="pop_tit">
+            <h1>수신자 보기</h1>
+            <button type="button" class="btn_pop_close"></button>
           </div>
-          <div class="btn_wrap alignC">
-            <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+          <div class="pop_body">
+            <div class="pop_cont">
+              <div class="box">
+                <div class="group_wrap flex_wrap f_sb">
+                  <ul>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                    <li><span>+821234567891</span></li>
+                  </ul>
+                </div>
+                <p>총 연락처 수 : <span>10</span>명</p>
+              </div>
+              <div class="btn_wrap alignC">
+                <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<script>
-  // 수신자 삭제
-  $('.axi-close').on('click', function () {
-    $(this).parent('li').remove();
-  })
-  $('.receiver_wrap').on('click', function () {
-    var parentUl = $(this).find('ul').children().length;
-    if (parentUl < 1) {
-      $(this).find('ul').remove();
-    }
-  })
-</script>
+    <script>
+      // 수신자 삭제
+      $('.axi-close').on('click', function () {
+        $(this).parent('li').remove();
+      })
+      $('.receiver_wrap').on('click', function () {
+        var parentUl = $(this).find('ul').children().length;
+        if (parentUl < 1) {
+          $(this).find('ul').remove();
+        }
+      })
+    </script>
     <!-- // 수신자 보기 -->
 
+    <!-- header -->
     <div class="slide_wrap">
-  <div class="slide">
-    <div class="flex_wrap f_sb util_user">
-      <p><b>홍길동</b>님</p>
-      <p><i class="axi axi-money"></i><span>1,000</span></p>
+      <div class="slide">
+        <div class="flex_wrap f_sb util_user">
+          <p><b>홍길동</b>님</p>
+          <p><i class="axi axi-money"></i><span>1,000</span></p>
+        </div>
+        <ul id="gnb">
+          <li>
+            <a href="user_send.html" class="depth1">문자 보내기</a>
+          </li>
+          <li>
+            <a href="#" class="depth1 on active">전송 내역</a>
+            <ul class="depth2">
+              <li><a href="user_record01.html">문자 전송 내역</a></li>
+              <li><a href="user_record02.html" class="on">문자 예약 내역</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="user_group.html" class="depth1 empty">그룹</a>
+          </li>
+          <li>
+            <a href="#" class="depth1 new">충전소</a>
+            <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
+            <ul class="depth2">
+              <li><a href="user_add01.html">충전하기</a></li>
+              <li><a href="user_add02.html">충전 내역</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="user_info.html" class="depth1 empty">내 정보</a>
+          </li>
+          <li>
+            <a href="user_board.html" class="depth1 empty">게시판</a>
+          </li>
+          <li>
+            <a href="user_notice.html" class="depth1 empty">공지사항</a>
+          </li>
+        </ul>
+      </div>
+      <div class="logout alignC">
+        <button type="button" class="btn_m btn_skyblue" onclick="location.href='admin_user01.html'">Admin 전환</button>
+        <button type="button" class="btn_m btn_green">로그아웃</button>
+      </div>
+      <div class="fix_wrap">
+        <button type="button" class="btn_open"></button>
+      </div>
     </div>
-    <ul id="gnb">
-      <li>
-        <a href="user_send.html" class="depth1 on active">문자 보내기</a>
-      </li>
-      <li>
-        <a href="#" class="depth1">전송 내역</a>
-        <ul class="depth2">
-          <li><a href="user_record01_1.html">문자 전송 내역</a></li>
-          <li><a href="user_record02.html">문자 예약 내역</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="user_group.html" class="depth1 empty">그룹</a>
-      </li>
-      <li>
-        <a href="#" class="depth1 new">충전소</a>
-        <!-- class name 'new'를 추가하면 메뉴명 옆에 n 아이콘이 나타납니다 -->
-        <ul class="depth2">
-          <li><a href="user_add01.html">충전하기</a></li>
-          <li><a href="user_add02.html">충전 내역</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="user_info.html" class="depth1 empty">내 정보</a>
-      </li>
-      <li>
-        <a href="user_board01.html" class="depth1 empty">게시판</a>
-      </li>
-      <li>
-        <a href="user_notice.html" class="depth1 empty">공지사항</a>
-      </li>
-    </ul>
-  </div>
-  <div class="logout alignC">
-    <button type="button" class="btn_m btn_skyblue" onclick="location.href='admin_user01.html'">Admin 전환</button>
-    <button type="button" class="btn_m btn_green">로그아웃</button>
-  </div>
-  <div class="fix_wrap">
-    <button type="button" class="btn_open"></button>
-  </div>
-</div>
+    <script>
+      // slide menu button
+      $('.btn_open').on('click', function () {
+        $('.slide_wrap').toggleClass('on');
+      })
+    </script>
+    <!--// header -->
 
-
-<script>
-  // slide menu button
-  $('.btn_open').on('click', function () {
-    $('.slide_wrap').toggleClass('on');
-  })
-</script>
   </div>
   <!-- // Contents -->
 </body>
@@ -262,29 +262,6 @@
     jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-  function detail(cellValue, options, rowdata, action) {
-    var html, txt = "";
-    switch (cellValue) {
-      case "수신자보기":
-        txt = "recipient";
-        break;
-      case "내용보기":
-        txt = "contents";
-        break;
-      case "연락처보기":
-        txt = "address";
-        break;
-      default:
-        txt = "none";
-    }
-    html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
-    return html;
-  }
-
-</script>
-
-
-<script>
   var mydata = [
     { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
     { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
@@ -344,6 +321,7 @@
     return html;
   }
 
+  // pop
   $('.btn_contents').on('click', function () {
     $('.p_record01_1').show();
   })

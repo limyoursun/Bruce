@@ -33,16 +33,21 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="user_group.html">그룹</a></li>
+            <li><a href="#">전송내역</a></li>
+            <li>문자 전송 내역</li>
           </ul>
         </div>
-        <h2 class="tit_h2">그룹</h2>
+        <h2 class="tit_h2">문자 전송 내역</h2>
+        <ul class="menu">
+          <li class="on"><a href="user_record01.html">문자 전송 내역</a></li>
+          <li><a href="user_record02.html">문자 예약 내역</a></li>
+        </ul>
       </div>
       <div class="wrap">
         <section>
           <div class="table_wrap">
             <div class="tbl_tit">
-              <h3 class="tit_h3">그룹 목록</h3>
+              <h3 class="tit_h3">문자 전송 내역</h3>
               <div class="search_area">
                 <ul class="search f_s">
                   <li>
@@ -58,27 +63,58 @@
                 </ul>
               </div>
             </div>
-            <div>
-              <div class="tbl_tit alignR" style="margin-bottom:10px;">
-                <button type="button" class="btn_s btn_blue" onClick="location.href='user_group_01.html'">그룹 생성</button>
-                <button type="button" class="btn_s btn_gray btn_groupDel">그룹 삭제</button>
-              </div>
-              <div class="tbl_wrap row_10">
-                <table id="jqGrid" class="jq-grid"></table>
-                <div id="jqGridPager"></div>
-              </div>
+            <div class="tbl_wrap row_10">
+              <table id="jqGrid" class="jq-grid"></table>
+              <div id="jqGridPager"></div>
             </div>
           </div>
         </section>
       </div>
     </div>
 
-    <!-- 연락처 보기 -->
-    <div class="pop_overlay p_group01_1">
+    <!-- 내용 보기 -->
+    <div class="pop_overlay p_record01_1">
       <div class="pop_area">
         <div class="pop_wrap">
           <div class="pop_tit">
-            <h1>연락처 보기</h1>
+            <h1>문자 내용보기</h1>
+            <button type="button" class="btn_pop_close"></button>
+          </div>
+          <div class="pop_body">
+            <div class="pop_cont">
+              <div class="text_sample">
+                <table>
+                  <caption>문자 내용 보기</caption>
+                  <tr>
+                    <th>문자 내용</th>
+                    <td>안녕하세요<br>문자 내용입니다.</td>
+                  </tr>
+                  <tr>
+                    <th>수신자 수</th>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <th>사용 크레딧</th>
+                    <td>2,000</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="btn_wrap alignC">
+                <button type="button" class="btn_cancel btn_s btn_gray">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // 내용 보기 -->
+
+    <!-- 수신자 보기 -->
+    <div class="pop_overlay p_record01_2">
+      <div class="pop_area">
+        <div class="pop_wrap">
+          <div class="pop_tit">
+            <h1>수신자 보기</h1>
             <button type="button" class="btn_pop_close"></button>
           </div>
           <div class="pop_body">
@@ -86,8 +122,6 @@
               <div class="box">
                 <div class="group_wrap flex_wrap f_sb">
                   <ul>
-                    <li><span>+821234567891</span></li>
-                    <li><span>+821234567891</span></li>
                     <li><span>+821234567891</span></li>
                     <li><span>+821234567891</span></li>
                     <li><span>+821234567891</span></li>
@@ -126,29 +160,7 @@
         }
       })
     </script>
-    <!-- // 연락처 보기 -->
-
-    <!-- 그룹 삭제 -->
-    <div class="pop_overlay p_group01_2">
-      <div class="pop_area">
-        <div class="pop_wrap">
-          <div class="pop_tit">
-            <h1>그룹 삭제</h1>
-            <button type="button" class="btn_pop_close"></button>
-          </div>
-          <div class="pop_body">
-            <div class="pop_cont">
-              <p class="box alignC">선택하신 그룹 <span class="font_red">N</span>개를 정말 삭제하시겠습니까?<br>삭제 후 복구는 불가능합니다.</p>
-              <div class="btn_wrap alignC">
-                <button type="button" class="btn_cancel btn_s btn_red">삭제</button>
-                <button type="button" class="btn_cancel btn_s btn_gray">취소</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- // 그룹 삭제 -->
+    <!-- // 수신자 보기 -->
 
     <!-- header -->
     <div class="slide_wrap">
@@ -162,14 +174,14 @@
             <a href="user_send.html" class="depth1">문자 보내기</a>
           </li>
           <li>
-            <a href="#" class="depth1">전송 내역</a>
+            <a href="#" class="depth1 on active">전송 내역</a>
             <ul class="depth2">
-              <li><a href="user_record01.html">문자 전송 내역</a></li>
+              <li><a href="user_record01.html" class="on">문자 전송 내역</a></li>
               <li><a href="user_record02.html">문자 예약 내역</a></li>
             </ul>
           </li>
           <li>
-            <a href="user_group.html" class="depth1 on active empty">그룹</a>
+            <a href="user_group.html" class="depth1 empty">그룹</a>
           </li>
           <li>
             <a href="#" class="depth1 new">충전소</a>
@@ -212,29 +224,37 @@
 
 <script>
   var mydata = [
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" },
-    { "t1": "2021-00-00 00:00:00", "t2": "그룹1", "t3": "100", "t4": "연락처보기" }
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" },
+    { "t1": "2021-00-00 00:00:00", "t2": "100", "t3": "그룹 불러오기 = '그룹1'", "t4": "10000", "t5": "성공", "t6": "100", "t7": "0", "t8": "내용보기", "t9": "수신자보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
     datatype: "local",
     colModel: [
-      { label: '생성일자', name: 't1', align: 'center' },
-      { label: '그룹명', name: 't2', align: 'center' },
-      { label: '연락처 수', name: 't3', align: 'center' },
-      { label: '연락처 보기', name: 't4', align: 'center', formatter: detail }
+      { label: '전송시간', name: 't1', align: 'center' },
+      { label: '수신자 수', name: 't2', align: 'center' },
+      { label: '수신자 지정', name: 't3', align: 'center' },
+      { label: '사용크레딧', name: 't4', align: 'center' },
+      { label: '발송여부', name: 't5', align: 'center', width: 100 },
+      { label: '성공', name: 't6', align: 'center' },
+      { label: '실패', name: 't7', align: 'center' },
+      { label: '내용 보기', name: 't8', align: 'center', width: 100, formatter: detail },
+      { label: '수신자 보기', name: 't9', align: 'center', width: 100, formatter: detail }
     ],
-    //rownumbers:true,
     loadonce: true,
     viewrecords: true,
     scrollOffset: true,
@@ -242,10 +262,10 @@
     pager: "#jqGridPager",
     autowidth: true,
     shrinkToFit: false,
-    multiselect: true,
     height: 298,
     rowNum: 10
   });
+
   // jqGrid : 창 크기 변경 시, 너비 자동 조절
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid").jqGrid('setGridWidth', $(".tbl_wrap").width());
@@ -270,13 +290,12 @@
     return html;
   }
 
-    // pop
-  $('.btn_address').on('click', function () {
-    $('.p_group01_1').show();
+  // pop
+  $('.btn_contents').on('click', function () {
+    $('.p_record01_1').show();
   })
-
-  $('.btn_groupDel').on('click', function () {
-    $('.p_group01_2').show();
+  $('.btn_recipient').on('click', function () {
+    $('.p_record01_2').show();
   })
 
 </script>

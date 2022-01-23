@@ -34,31 +34,6 @@ $(function () {
     regional: ["ko"],
     dateFormat: "yy-mm-dd",
   });
-  $("[dataformat='datepic']").datepicker({
-    buttonText: "날짜를 선택해주세요.",
-  });
-  var from = $("[dataformat='from']").datepicker({
-    buttonText: "시작날짜를 선택해주세요.",
-    onClose: function (selectedDate) {
-      var getName = $(this).attr("name");
-      $("input[name='" + getName + "'].to").datepicker(
-        "option",
-        "minDate",
-        selectedDate
-      );
-    },
-  });
-  var to = $("[dataformat='to']").datepicker({
-    buttonText: "종료날짜를 선택해주세요.",
-    onClose: function (selectedDate) {
-      var getName = $(this).attr("name");
-      $("input[name='" + getName + "'].from").datepicker(
-        "option",
-        "maxDate",
-        selectedDate
-      );
-    },
-  });
 
   // pop
   var popBtn = $("[openpop]");
@@ -77,6 +52,12 @@ $(function () {
   });
 
   // datetimepicker
+  $.datetimepicker.setLocale("kr");
+  $("#datepicker").datetimepicker({
+    format: "Y/m/d",
+    timepicker:false
+  });
+
   $.datetimepicker.setLocale("kr");
   $("#datetimepicker").datetimepicker({
     minDate: 0,

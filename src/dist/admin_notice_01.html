@@ -33,7 +33,7 @@
       <div class="tit">
         <div class="locate">
           <ul>
-            <li><a href="#">공지사항</a></li>
+            <li><a href="admin_notice.html">공지사항</a></li>
             <li>글쓰기</li>
           </ul>
         </div>
@@ -147,59 +147,61 @@
         </section>
       </div>
     </div>
-    <div class="slide_wrap">
-  <div class="slide">
-    <div class="flex_wrap f_sb util_user">
-      <p><b>관리자</b>님</p>
-    </div>
-    <ul id="gnb">
-      <li>
-        <a href="admin_user01.html" class="depth1 on active">유저 관리</a>
-        <ul class="depth2">
-          <li><a href="admin_user01.html" class="on">유저 정보</a></li>
-          <li><a href="admin_user02.html">문자 전송 내역</a></li>
-          <li><a href="admin_user03.html">충전 내역</a></li>
-          <li><a href="admin_user04.html">그룹 생성 내역</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="admin_payment.html" class="depth1 empty">결제 관리</a>
-      </li>
-      <li>
-        <a href="admin_fill.html" class="depth1 empty">충전 내역</a>
-      <li>
-        <a href="admin_history.html" class="depth1 empty">문자 전송 내역</a>
-      </li>
-      <li>
-        <a href="admin_notice.html" class="depth1 empty">공지사항</a>
-      </li>
-    </ul>
-  </div>
-  <div class="logout alignC">
-    <button type="button" class="btn_m btn_skyblue" onclick="location.href='user_send.html'">User 전환</button>
-    <button type="button" class="btn_m btn_green">로그아웃</button>
-  </div>
-  <div class="fix_wrap">
-    <button type="button" class="btn_open"></button>
-  </div>
-</div>
 
-<script> // slide menu button
-  $('.btn_open').on('click', function () {
-    $('.slide_wrap').toggleClass('on');
-  })
-</script>
+    <!-- admin header -->
+    <div class="slide_wrap">
+      <div class="slide">
+        <div class="flex_wrap f_sb util_user">
+          <p><b>관리자</b>님</p>
+        </div>
+        <ul id="gnb">
+          <li>
+            <a href="#" class="depth1">유저 관리</a>
+            <ul class="depth2">
+              <li><a href="admin_user01.html">유저 정보</a></li>
+              <li><a href="admin_user02.html">문자 전송 내역</a></li>
+              <li><a href="admin_user03.html">충전 내역</a></li>
+              <li><a href="admin_user04.html">그룹 생성 내역</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="admin_payment.html" class="depth1 empty">결제 관리</a>
+          </li>
+          <li>
+            <a href="admin_fill.html" class="depth1 empty">충전 내역</a>
+          <li>
+            <a href="admin_history.html" class="depth1 empty">문자 전송 내역</a>
+          </li>
+          <li>
+            <a href="admin_notice.html" class="depth1 on active empty">공지사항</a>
+          </li>
+        </ul>
+      </div>
+      <div class="logout alignC">
+        <button type="button" class="btn_m btn_skyblue" onclick="location.href='user_send.html'">User 전환</button>
+        <button type="button" class="btn_m btn_green">로그아웃</button>
+      </div>
+      <div class="fix_wrap">
+        <button type="button" class="btn_open"></button>
+      </div>
+    </div>
+    <script> // slide menu button
+      $('.btn_open').on('click', function () {
+        $('.slide_wrap').toggleClass('on');
+      })
+    </script>
+    <!--// admin header -->
 
     <!-- 충전신청 알람 -->
     <div class="toast_alarm">
-  <ul>
-    <li class="flex_wrap f_sb">
-      <div class="flex_wrap">
-        <i class="axi axi-add-box"></i>
-        <div>
-          <span>[충전신청]</span>
-          <span>새로운 충전신청이 있습니다</span>
-          <!-- 아이디와 금액을 표기하실 때 사용하세요
+      <ul>
+        <li class="flex_wrap f_sb">
+          <div class="flex_wrap">
+            <i class="axi axi-add-box"></i>
+            <div>
+              <span>[충전신청]</span>
+              <span>새로운 충전신청이 있습니다</span>
+              <!-- 아이디와 금액을 표기하실 때 사용하세요
           <p>
             <span>아이디 : </span>
             <span>user01</span>
@@ -208,16 +210,16 @@
             <span>금&nbsp;&nbsp;&nbsp;액 : </span>
             <span>1,000</span>
           </p> -->
-        </div>
-      </div>
-      <div>
-        <button type="button">
-          <i class="axi axi-close"></i>
-        </button>
-      </div>
-    </li>
-  </ul>
-</div>
+            </div>
+          </div>
+          <div>
+            <button type="button">
+              <i class="axi axi-close"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
     <!-- // 충전신청 알람-->
   </div>
 
@@ -225,17 +227,6 @@
     $(function () {
       /* flie */
       fileDropEvt();
-
-      /* calendar */
-      $.datetimepicker.setLocale('kr');
-      $('#datetimepicker').datetimepicker({
-        buttonImage: "../images/btn_calendar.png"
-      });
-      $('#datetimepicker2').datetimepicker({
-        format: 'Y/m/d',
-        formatDate: 'Y/m/d',
-        timepicker: false
-      });
     })
   </script>
   <!-- // Contents -->
