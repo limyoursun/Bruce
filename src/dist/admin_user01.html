@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
   <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
-  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/sub.css">
-  <link rel="stylesheet" href="../css/pop.css">
 
   <script src="../plugins/jquery/dist/jquery.min.js"></script>
   <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -24,7 +22,6 @@
   <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
   <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
   <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-  <script src="../plugins/echarts/dist/echarts.min.js"></script>
   <script src="../js/file_attach.js"></script>
   <script src="../js/ui_common.js"></script>
 </head>
@@ -227,7 +224,7 @@
   </div>
 </div>
     <!-- // 내용 보기 -->
-    
+
     <!-- 수신자 보기 -->
     <div class="pop_overlay p_record01_2">
   <div class="pop_area">
@@ -281,7 +278,7 @@
   })
 </script>
     <!-- // 수신자 보기 -->
-    
+
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -324,6 +321,8 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+
+    <!-- 충전신청 알람 -->
     <div class="toast_alarm">
   <ul>
     <li class="flex_wrap f_sb">
@@ -351,6 +350,7 @@
     </li>
   </ul>
 </div>
+    <!-- // 충전신청 알람-->
 
   </div>
   <!-- // Contents -->
@@ -359,16 +359,12 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"},
-    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정"}
+    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정" },
+    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정" },
+    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정" },
+    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정" },
+    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정" },
+    { "t1": "user01", "t2": "김철수", "t3": "활성", "t4": "10,000", "t5": "01000000000", "t6": "어떠한 사유로 비활성 계정" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -379,7 +375,7 @@
       { label: '상태', name: 't3', align: 'center' },
       { label: '보유 크레딧', name: 't4', align: 'center' },
       { label: '연락처', name: 't5', align: 'center' },
-      { label: '메모', name: 't6', align: 'center'}
+      { label: '메모', name: 't6', align: 'center' }
     ],
     //rownumbers:true,
     loadonce: true,

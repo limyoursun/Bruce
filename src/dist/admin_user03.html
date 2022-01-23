@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
   <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
-  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/sub.css">
-  <link rel="stylesheet" href="../css/pop.css">
 
   <script src="../plugins/jquery/dist/jquery.min.js"></script>
   <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -24,7 +22,6 @@
   <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
   <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
   <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-  <script src="../plugins/echarts/dist/echarts.min.js"></script>
   <script src="../js/file_attach.js"></script>
   <script src="../js/ui_common.js"></script>
 </head>
@@ -130,26 +127,26 @@
                   </tbody>
                 </table>
               </div>
-                <div class="box">
-                  <h3 class="tit_h3">결제 수단</h3>
-                  <table class="filebox_wrap">
-                    <caption>크레딧 결제 수단</caption>
-                    <colgroup>
-                      <col width="45%">
-                      <col width="55%">
-                    </colgroup>
-                    <tbody>
-                      <tr>
-                        <th>결제 방법</th>
-                        <td>암호화폐</td>
-                      </tr>
-                      <tr>
-                        <th>내용</th>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              <div class="box">
+                <h3 class="tit_h3">결제 수단</h3>
+                <table class="filebox_wrap">
+                  <caption>크레딧 결제 수단</caption>
+                  <colgroup>
+                    <col width="45%">
+                    <col width="55%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>결제 방법</th>
+                      <td>암호화폐</td>
+                    </tr>
+                    <tr>
+                      <th>내용</th>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
           <div class="alignR" style="margin:10px 0;">
@@ -228,6 +225,8 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+
+    <!-- 충전신청 알람 -->
     <div class="toast_alarm">
   <ul>
     <li class="flex_wrap f_sb">
@@ -255,6 +254,7 @@
     </li>
   </ul>
 </div>
+    <!-- // 충전신청 알람-->
   </div>
   <!-- // Contents -->
 </body>
@@ -300,7 +300,7 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-    function detail(cellValue, options, rowdata, action) {
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":

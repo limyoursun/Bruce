@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
   <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
-  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/sub.css">
-  <link rel="stylesheet" href="../css/pop.css">
 
   <script src="../plugins/jquery/dist/jquery.min.js"></script>
   <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -24,7 +22,6 @@
   <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
   <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
   <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-  <script src="../plugins/echarts/dist/echarts.min.js"></script>
   <script src="../js/file_attach.js"></script>
   <script src="../js/ui_common.js"></script>
 </head>
@@ -100,48 +97,22 @@
           <div class="box">
             <div class="group_wrap flex_wrap f_sb">
               <ul>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
-                <li>
-                  <span>+821234567891</span>
-                </li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
+                <li><span>+821234567891</span></li>
               </ul>
             </div>
             <p>총 연락처 수 : <span>10</span>명</p>
@@ -211,6 +182,8 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+
+    <!-- 충전신청 알람 -->
     <div class="toast_alarm">
   <ul>
     <li class="flex_wrap f_sb">
@@ -238,6 +211,7 @@
     </li>
   </ul>
 </div>
+    <!-- // 충전신청 알람-->
 
   </div>
   <!-- // Contents -->
@@ -281,8 +255,8 @@
   $(window).on('resize.jqGrid', function () {
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
-  
-    function detail(cellValue, options, rowdata, action) {
+
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":

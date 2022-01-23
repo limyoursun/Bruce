@@ -61,7 +61,7 @@
             </div>
             <div class="tbl_wrap row_10">
               <div class="tbl_top f_e">
-                <button type="button" class="btn_s btn_blue">엑셀 다운로드</button>
+                <button type="button" class="btn_s btn_green">엑셀 다운로드</button>
               </div>
               <table id="jqGrid" class="jq-grid"></table>
               <div id="jqGridPager"></div>
@@ -70,8 +70,20 @@
         </section>
       </div>
     </div>
+
+    <!-- 내용 보기 -->
+    @@include('inc/p_record01_1.html')
+    <!-- // 내용 보기 -->
+
+    <!-- 연락처 보기 -->
+    @@include('inc/p_group01_1.html')
+    <!-- // 연락처 보기 -->
+
     @@include('inc/admin_header.html')
+
+    <!-- 충전신청 알람 -->
     @@include('inc/toast.html')
+    <!-- // 충전신청 알람-->
   </div>
   <!-- // Contents -->
 </body>
@@ -79,12 +91,12 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"},
-    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "보기", "t7": "보기"}
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "내용보기", "t7": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "내용보기", "t7": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "내용보기", "t7": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "내용보기", "t7": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "내용보기", "t7": "연락처보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "임철수", "t4": "1000", "t5": "암호화폐", "t6": "내용보기", "t7": "연락처보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
@@ -95,8 +107,8 @@
       { label: '이름', name: 't3', align: 'center' },
       { label: '수신자 수', name: 't4', align: 'center' },
       { label: '수신자 지정', name: 't5', align: 'center' },
-      { label: '내용 보기', name: 't6', align: 'center' , formatter: detail },
-      { label: '연락처 보기', name: 't7', align: 'center' , formatter: detail }
+      { label: '내용 보기', name: 't6', align: 'center', formatter: detail },
+      { label: '연락처 보기', name: 't7', align: 'center', formatter: detail }
     ],
     //rownumbers:true,
     loadonce: true,
@@ -115,7 +127,7 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-   function detail(cellValue, options, rowdata, action) {
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":
@@ -133,6 +145,14 @@
     html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  $('.btn_address').on('click', function () {
+    $('.p_group01_1').show();
+  })
+
+  $('.btn_contents').on('click', function () {
+    $('.p_record01_1').show();
+  })
 </script>
 
 </html>

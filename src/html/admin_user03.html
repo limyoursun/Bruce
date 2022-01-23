@@ -73,7 +73,10 @@
     <!-- // 크레딧 결제 상세내역 보기 -->
 
     @@include('inc/admin_header.html')
+
+    <!-- 충전신청 알람 -->
     @@include('inc/toast.html')
+    <!-- // 충전신청 알람-->
   </div>
   <!-- // Contents -->
 </body>
@@ -119,7 +122,7 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-    function detail(cellValue, options, rowdata, action) {
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":

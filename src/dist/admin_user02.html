@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
   <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
-  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/sub.css">
-  <link rel="stylesheet" href="../css/pop.css">
 
   <script src="../plugins/jquery/dist/jquery.min.js"></script>
   <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -24,7 +22,6 @@
   <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
   <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
   <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-  <script src="../plugins/echarts/dist/echarts.min.js"></script>
   <script src="../js/file_attach.js"></script>
   <script src="../js/ui_common.js"></script>
 </head>
@@ -99,7 +96,7 @@
   </div>
 </div>
     <!-- // 내용 보기 -->
-    
+
     <!-- 수신자 보기 -->
     <div class="pop_overlay p_user02_2">
   <div class="pop_area">
@@ -156,7 +153,7 @@
   })
 </script>
     <!-- // 수신자 보기 -->
-    
+
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -199,6 +196,8 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+
+    <!-- 충전신청 알람 -->
     <div class="toast_alarm">
   <ul>
     <li class="flex_wrap f_sb">
@@ -226,6 +225,7 @@
     </li>
   </ul>
 </div>
+    <!-- // 충전신청 알람-->
   </div>
   <!-- // Contents -->
 </body>
@@ -233,6 +233,10 @@
 
 <script>
   var mydata = [
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
+    { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
     { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
     { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
     { "t1": "user01", "t2": "2021-00-00 00:00:00", "t3": "100", "t4": "그룹 불러오기 = '그룹1'", "t5": "10000", "t6": "성공", "t7": "100", "t8": "0", "t9": "내용보기", "t10": "수신자보기" },
@@ -263,7 +267,6 @@
     pager: "#jqGridPager",
     autowidth: true,
     shrinkToFit: false,
-    height: 298,
     rowNum: 10
   });
 
@@ -272,7 +275,7 @@
     jQuery("#jqgrid2").jqGrid('setGridWidth', $(".tbl_wrap").width());
   });
 
-    function detail(cellValue, options, rowdata, action) {
+  function detail(cellValue, options, rowdata, action) {
     var html, txt = "";
     switch (cellValue) {
       case "수신자보기":

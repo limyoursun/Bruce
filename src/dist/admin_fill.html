@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css">
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery.datetimepicker.css">
   <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css">
-  <link rel="stylesheet" href="../plugins/summernote/css/summernote-lite.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/sub.css">
-  <link rel="stylesheet" href="../css/pop.css">
 
   <script src="../plugins/jquery/dist/jquery.min.js"></script>
   <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -24,7 +22,6 @@
   <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
   <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
   <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
-  <script src="../plugins/echarts/dist/echarts.min.js"></script>
   <script src="../js/file_attach.js"></script>
   <script src="../js/ui_common.js"></script>
 </head>
@@ -102,6 +99,122 @@
         </section>
       </div>
     </div>
+
+    <!-- 충전하기 -->
+    <div class="pop_overlay p_fill">
+  <div class="pop_area">
+    <div class="pop_wrap">
+      <div class="pop_tit">
+        <h1>충전하기</h1>
+        <button type="button" class="btn_pop_close"></button>
+      </div>
+      <div class="pop_body">
+        <div class="pop_cont">
+          <h4 class="tit_h4">충전요청</h4>
+          <div class="fill_area">
+            <table class="tbl_blackTop">
+              <caption>충전요청</caption>
+              <colgroup>
+                <col width="40%">
+                <col width="60%">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th><span>상태</span></label></th>
+                  <td>
+                    <span>대기</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>아이디</span></label></th>
+                  <td>
+                    <span>test111</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>이름</span></label></th>
+                  <td>
+                    <span>김철수</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>충전 크레딧</span></label></th>
+                  <td>
+                    <span>10,000</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th><span>충전 방법</span></label></th>
+                  <td>
+                    <span>암호화폐</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <section>
+              <div class="fill_wrap">
+                <table class="tbl_blackTop">
+                  <caption>충전 상세내역</caption>
+                  <colgroup>
+                    <col width="40%">
+                    <col width="60%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th><span>입금수단</span></label></th>
+                      <td>
+                        <select class="input_title" title="fill_way">
+                          <option value="은행송금">은행송금</option>
+                          <option value="비트코인">비트코인</option>
+                          <option value="이더리움">이더리움</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>입금 금액</span></label></th>
+                      <td><input type="number" class="input_title" title="fill"></td>
+                    </tr>
+                    <tr>
+                      <th><span>입금 일자</span></label></th>
+                      <td>
+                        <input type="text" id="datetimepicker" dateformat="datepic" title="date"
+                          class="input_title input_calendar" value="입금일자 선택">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>단위</span></label></th>
+                      <td>
+                        <select class="input_title" title="fill_way">
+                          <option value="원">원</option>
+                          <option value="BTC">BTC</option>
+                          <option value="WEI">WEI</option>
+                          <option value="달러">달러</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>비고</span></th>
+                      <td colspan="3"><input type="text" class="input_title" title="fill"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="exchange_wrap blueline_box">
+                  1 BTC = 60000000<br>당일 09시 기준<br>(거래소 : ????)
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="btn_wrap alignC">
+            <button type="button" class="btn_cancel btn_s btn_blue">충전하기</button>
+            <button type="button" class="btn_cancel btn_s btn_gray">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- // 충전하기 -->
+
     <div class="slide_wrap">
   <div class="slide">
     <div class="flex_wrap f_sb util_user">
@@ -144,6 +257,8 @@
     $('.slide_wrap').toggleClass('on');
   })
 </script>
+    
+    <!-- 충전신청 알람 -->
     <div class="toast_alarm">
   <ul>
     <li class="flex_wrap f_sb">
@@ -171,6 +286,7 @@
     </li>
   </ul>
 </div>
+    <!-- // 충전신청 알람-->
   </div>
   <!-- // Contents -->
 </body>
@@ -178,21 +294,17 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" }
+    { "t1": "waiting", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
+    { "t1": "done", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
+    { "t1": "failed", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
+    { "t1": "waiting", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
     datatype: "local",
     colModel: [
-      { label: '아이디', name: 't1', align: 'center' },
-      { label: '상태', name: 't2', align: 'center' },
+      { label: '상태', name: 't1', align: 'center', formatter: fill },
+      { label: '아이디', name: 't2', align: 'center' },
       { label: '날짜', name: 't3', align: 'center' },
       { label: '이름', name: 't4', align: 'center' },
       { label: '충전 크레딧', name: 't5', align: 'center' },
@@ -208,7 +320,6 @@
     pager: "#jqGridPager",
     autowidth: true,
     shrinkToFit: false,
-    height: 298,
     rowNum: 10
   });
 
@@ -235,6 +346,32 @@
     html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  function fill(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "waiting":
+        txt = "대기";
+        color = "red";
+        break;
+      case "done":
+        txt = "충전완료";
+        color = "";
+        break;
+      case "failed":
+        txt = "충전취소";
+        color = "";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="btn_waiting font_' + color + '">' + txt + '</button>';
+    return html;
+  }
+
+  $('.btn_waiting').on('click', function () {
+    $('.p_fill').show();
+  })
 </script>
 
 </html>

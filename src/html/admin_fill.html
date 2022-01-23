@@ -73,8 +73,16 @@
         </section>
       </div>
     </div>
+
+    <!-- 충전하기 -->
+    @@include('inc/p_fill.html')
+    <!-- // 충전하기 -->
+
     @@include('inc/admin_header.html')
+    
+    <!-- 충전신청 알람 -->
     @@include('inc/toast.html')
+    <!-- // 충전신청 알람-->
   </div>
   <!-- // Contents -->
 </body>
@@ -82,21 +90,17 @@
 
 <script>
   var mydata = [
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
-    { "t1": "user01", "t2": "대기", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" }
+    { "t1": "waiting", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
+    { "t1": "done", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
+    { "t1": "failed", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" },
+    { "t1": "waiting", "t2": "김철수", "t3": "2021-00-00 00:00:00", "t4": "임철수", "t5": "10000", "t6": "암호화폐", "t7": "", "t8": "내용보기" }
   ];
   $("#jqGrid").jqGrid({
     data: mydata,
     datatype: "local",
     colModel: [
-      { label: '아이디', name: 't1', align: 'center' },
-      { label: '상태', name: 't2', align: 'center' },
+      { label: '상태', name: 't1', align: 'center', formatter: fill },
+      { label: '아이디', name: 't2', align: 'center' },
       { label: '날짜', name: 't3', align: 'center' },
       { label: '이름', name: 't4', align: 'center' },
       { label: '충전 크레딧', name: 't5', align: 'center' },
@@ -112,7 +116,6 @@
     pager: "#jqGridPager",
     autowidth: true,
     shrinkToFit: false,
-    height: 298,
     rowNum: 10
   });
 
@@ -139,6 +142,32 @@
     html = '<button type="button" class="axi btn_dtl btn_' + txt + '"></button>';
     return html;
   }
+
+  function fill(cellValue, options, rowdata, action) {
+    var html, txt = "";
+    switch (cellValue) {
+      case "waiting":
+        txt = "대기";
+        color = "red";
+        break;
+      case "done":
+        txt = "충전완료";
+        color = "";
+        break;
+      case "failed":
+        txt = "충전취소";
+        color = "";
+        break;
+      default:
+        txt = "none";
+    }
+    html = '<button type="button" class="btn_waiting font_' + color + '">' + txt + '</button>';
+    return html;
+  }
+
+  $('.btn_waiting').on('click', function () {
+    $('.p_fill').show();
+  })
 </script>
 
 </html>
